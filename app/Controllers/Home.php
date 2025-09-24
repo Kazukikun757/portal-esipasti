@@ -15,8 +15,14 @@ class Home extends BaseController
     
     public function index(): string
     {
+        // Tambahkan header untuk mencegah caching
+        $this->response->setHeader('Cache-Control', 'no-store, max-age=0, no-cache, must-revalidate');
+        $this->response->setHeader('Pragma', 'no-cache');
+        $this->response->setHeader('Expires', '0');
+        
         $data = [
-            'menus' => $this->menuModel->getActiveMenus()
+            'menus' => $this->menuModel->getActiveMenus(),
+            'cache_buster' => time() // Tambahkan timestamp untuk mencegah caching
         ];
         
         return view('home', $data);

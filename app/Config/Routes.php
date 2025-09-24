@@ -15,4 +15,5 @@ $routes->group('admin', function ($routes) {
     $routes->get('menu/edit/(:num)', 'Admin\MenuController::edit/$1');
     $routes->post('menu/update/(:num)', 'Admin\MenuController::update/$1');
     $routes->get('menu/delete/(:num)', 'Admin\MenuController::delete/$1');
+    $routes->post('menu/update-order', 'Admin\MenuController::updateOrder');
 });

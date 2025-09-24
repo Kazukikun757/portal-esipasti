@@ -118,7 +118,8 @@ $(function() {
             $.ajax({
                 url: "/admin/menu/update-order",
                 method: "POST",
-                data: { positions: positions },
+                data: JSON.stringify({ positions: positions }),
+                contentType: "application/json",
                 success: function(response) {
                     if (response.success) {
                         // Show success message

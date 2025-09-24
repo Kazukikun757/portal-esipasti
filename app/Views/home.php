@@ -8,6 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     <meta name="description" content="Kimono - Photography Agency">
     <meta name="author" content="">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
 
     <!-- Favicon and touch Icons -->
     <link href="../assets/img/favicon.png" rel="shortcut icon" type="image/png">
@@ -228,7 +231,7 @@
                                         <?php if (isset($menus) && !empty($menus)): ?>
                                             <?php foreach ($menus as $menu): ?>
                                                 <a href="<?= $menu['link'] ?>" class="menu-item">
-                                                    <div class="menu-icon"><img src="<?= $menu['icon'] ?>" alt="<?= $menu['name'] ?>"></div>
+                                                    <div class="menu-icon"><img src="<?= $menu['icon'] ?>?v=<?= $cache_buster ?>" alt="<?= $menu['name'] ?>"></div>
                                                     <div class="menu-text"><?= $menu['name'] ?></div>
                                                 </a>
                                             <?php endforeach; ?>
@@ -265,45 +268,7 @@
                                         <?php if (isset($menus) && !empty($menus)): ?>
                                             <?php foreach ($menus as $menu): ?>
                                                 <a href="<?= $menu['link'] ?>" class="menu-item">
-                                                    <div class="menu-icon"><img src="<?= $menu['icon'] ?>" alt="<?= $menu['name'] ?>"></div>
-                                                    <div class="menu-text"><?= $menu['name'] ?></div>
-                                                </a>
-                                            <?php endforeach; ?>
-                                        <?php else: ?>
-                                            <!-- Fallback jika tidak ada menu -->
-                                            <a href="#" class="menu-item">
-                                                <div class="menu-icon"><img src="../assets/img/icons/default.svg" alt=""></div>
-                                                <div class="menu-text">Menu Tidak Tersedia</div>
-                                            </a>
-                                        <?php endif; ?>
-                                    </div>
-                                    <div class="wptb-slider--inner">
-                                        <div class="wptb-heading">
-                                            <div class="wptb-item--inner">
-                                                <h1 class="wptb-item--title">Portal <br> <span>Sipasti</span></h1>
-                                                <h1 class="wptb-item--title text-outline">Folio</h1>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Slide Item -->
-
-                    <!-- Slide Item -->
-                    <div class="swiper-slide">
-                        <div class="wptb-slider--item">
-                            <!-- Layer Image -->
-
-                            <div class="wptb-slider--content">
-                                <div class="wptb-slider--image">
-                                    <img src="../assets/img/pky/pkuy.jpg" alt="img">
-                                    <div class="menu-grid">
-                                        <?php if (isset($menus) && !empty($menus)): ?>
-                                            <?php foreach ($menus as $menu): ?>
-                                                <a href="<?= $menu['link'] ?>" class="menu-item">
-                                                    <div class="menu-icon"><img src="<?= $menu['icon'] ?>" alt="<?= $menu['name'] ?>"></div>
+                                                    <div class="menu-icon"><img src="<?= $menu['icon'] ?>?v=<?= $cache_buster ?>" alt="<?= $menu['name'] ?>"></div>
                                                     <div class="menu-text"><?= $menu['name'] ?></div>
                                                 </a>
                                             <?php endforeach; ?>
@@ -341,7 +306,45 @@
                                         <?php if (isset($menus) && !empty($menus)): ?>
                                             <?php foreach ($menus as $menu): ?>
                                                 <a href="<?= $menu['link'] ?>" class="menu-item">
-                                                    <div class="menu-icon"><img src="<?= $menu['icon'] ?>" alt="<?= $menu['name'] ?>"></div>
+                                                    <div class="menu-icon"><img src="<?= $menu['icon'] ?>?v=<?= $cache_buster ?>" alt="<?= $menu['name'] ?>"></div>
+                                                    <div class="menu-text"><?= $menu['name'] ?></div>
+                                                </a>
+                                            <?php endforeach; ?>
+                                        <?php else: ?>
+                                            <!-- Fallback jika tidak ada menu -->
+                                            <a href="#" class="menu-item">
+                                                <div class="menu-icon"><img src="../assets/img/icons/default.svg" alt=""></div>
+                                                <div class="menu-text">Menu Tidak Tersedia</div>
+                                            </a>
+                                        <?php endif; ?>
+                                    </div>
+                                    <div class="wptb-slider--inner">
+                                        <div class="wptb-heading">
+                                            <div class="wptb-item--inner">
+                                                <h1 class="wptb-item--title">Portal <br> <span>Sipasti</span></h1>
+                                                <h1 class="wptb-item--title text-outline">Folio</h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Slide Item -->
+
+                    <!-- Slide Item -->
+                    <div class="swiper-slide">
+                        <div class="wptb-slider--item">
+                            <!-- Layer Image -->
+
+                            <div class="wptb-slider--content">
+                                <div class="wptb-slider--image">
+                                    <img src="../assets/img/pky/pkuy.jpg" alt="img">
+                                    <div class="menu-grid">
+                                        <?php if (isset($menus) && !empty($menus)): ?>
+                                            <?php foreach ($menus as $menu): ?>
+                                                <a href="<?= $menu['link'] ?>" class="menu-item">
+                                                    <div class="menu-icon"><img src="<?= $menu['icon'] ?>?v=<?= $cache_buster ?>" alt="<?= $menu['name'] ?>"></div>
                                                     <div class="menu-text"><?= $menu['name'] ?></div>
                                                 </a>
                                             <?php endforeach; ?>
@@ -386,7 +389,7 @@
                                             <?php if (isset($menus) && !empty($menus)): ?>
                                                 <?php foreach ($menus as $menu): ?>
                                                     <a href="<?= $menu['link'] ?>" class="menu-item">
-                                                        <div class="menu-icon"><img src="<?= $menu['icon'] ?>" alt="<?= $menu['name'] ?>"></div>
+                                                        <div class="menu-icon"><img src="<?= $menu['icon'] ?>?v=<?= $cache_buster ?>" alt="<?= $menu['name'] ?>"></div>
                                                         <div class="menu-text"><?= $menu['name'] ?></div>
                                                     </a>
                                                 <?php endforeach; ?>
