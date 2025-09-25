@@ -28,7 +28,7 @@ class Database extends Config
         'DSN'          => '',
         'hostname'     => 'localhost',
         'username'     => 'root',
-        'password'     => 'hishasyl115a1408',
+        'password'     => '',
         'database'     => 'portal_esipasti',
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',
