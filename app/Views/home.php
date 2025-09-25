@@ -34,10 +34,9 @@
     <div id="preloader">
         <div class="preloader-inner">
             <div class="spinner">
-                <img src="../assets/img/preloader-logo.svg" alt="img">
-                <img src="../assets/img/preloader-wheel.svg" alt="img" class="wheel">
+                <img src="../assets/img/logo.png" alt="img">
             </div>
-
+            <h2 class="preloader-text">Portal SIPASTI</h2>
         </div>
     </div>
 
@@ -101,8 +100,8 @@
         <button class="aside_close">Close <i class="bi bi-x-lg"></i></button>
 
         <div class="aside_logo logo">
-            <a href="index.html" class="light_logo"><img src="../assets/img/logo.svg" alt="logo"></a>
-            <a href="index.html" class="dark_logo"><img src="../assets/img/logo-dark.svg" alt="logo"></a>
+            <a href="index.html" class="light_logo"><img src="../assets/img/logo.png" alt="logo"></a>
+            <a href="index.html" class="dark_logo"><img src="../assets/img/logo.png" alt="logo"></a>
         </div>
 
         <div class="aside_info_inner">
@@ -262,8 +261,8 @@
             <!-- Left Pane -->
             <div class="wptb-left-pane justify-content-center justify-content-xl-between">
                 <div class="logo d-none d-xl-block">
-                    <a href="index.html" class="light_logo"><img src="../assets/img/logo.svg" alt="logo"></a>
-                    <a href="index.html" class="dark_logo"><img src="../assets/img/logo-dark.svg" alt="logo"></a>
+                    <a href="#" class="light_logo"><img src="../assets/img/logomiring.png" alt="logo"></a>
+                    <a href="#" class="dark_logo"><img src="../assets/img/logomiring.png" alt="logo"></a>
                 </div>
 
                 <div class="aside_open d-none d-xl-flex">
