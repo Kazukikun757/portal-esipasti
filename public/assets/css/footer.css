@@ -1,4 +1,5 @@
-/* Footer Section  */
+/* Footer Section */
+
 .footer {
     position: relative;
     z-index: 1;
@@ -6,13 +7,16 @@
     font-weight: var(--fw-light);
     line-height: 34px;
     color: var(--color-white);
-    background-color: var(--color-footer-one);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    /* PERUBAHAN: Warna latar belakang diubah ke dark gray */
+    background-color: #212121;
     overflow: hidden;
 }
-.footer.style1::before {
+
+
+/* DIHAPUS: Blok kode ini yang membuat garis vertikal di tengah. */
+
+
+/* .footer.style1::before {
     content: '';
     position: absolute;
     left: 50%;
@@ -21,16 +25,19 @@
     height: 110px;
     background-color: var(--color-dark-seven);
 }
-.footer .footer--inner{
+*/
+
+.footer .footer--inner {
     position: relative;
     padding-top: 155px;
     padding-bottom: 100px;
     overflow: hidden;
 }
+
 .footer .footer-widget:has(.footer-nav) {
     margin-top: 50px;
 }
-  
+
 .footer ul {
     padding: 0;
     margin-bottom: 0px;
@@ -48,6 +55,7 @@
 .footer .footer-widget svg {
     display: block;
 }
+
 .footer .widget-title {
     color: var(--color-two-fixed);
     font-size: 18px;
@@ -55,11 +63,13 @@
     letter-spacing: 2px;
     padding-top: 20px;
 }
+
 .footer .widget-title::before {
     position: absolute;
     top: 0;
     display: none;
 }
+
 .footer .logo img {
     min-width: 165px;
 }
@@ -68,9 +78,11 @@
     position: relative;
     line-height: normal;
 }
-.footer .footer-nav li + li {
+
+.footer .footer-nav li+li {
     margin-top: 26px;
 }
+
 .footer .footer-nav li a {
     position: relative;
     display: inline-flex;
@@ -82,18 +94,22 @@
     font-size: 16px;
     font-style: normal;
     font-weight: var(--fw-medium);
-    line-height: 26px; /* 185.714% */
+    line-height: 26px;
+    /* 185.714% */
     letter-spacing: 3px;
     text-transform: uppercase;
     transition: var(--transition-base);
 }
+
 .footer .footer-nav li a:hover {
     color: var(--color-one);
 }
+
 .footer .footer-nav li a i {
     font-size: 5px;
     margin-right: 10px;
 }
+
 .footer .footer-nav li a i.bi-arrow-right {
     font-size: 18px;
 }
@@ -103,13 +119,14 @@
 }
 
 
-
 /* Footer Bottom Part  */
+
 .footer .footer-bottom {
     border-top: 1px solid rgba(var(--color-white-fixed-rgb), 0.1);
     padding: 27px 0px;
 }
-.footer .footer-bottom .footer-bottom-inner{
+
+.footer .footer-bottom .footer-bottom-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -125,7 +142,7 @@
     margin-bottom: 0;
 }
 
-.footer .footer-nav-bottom ul li + li {
+.footer .footer-nav-bottom ul li+li {
     margin-left: 20px;
 }
 
@@ -136,9 +153,11 @@
 .footer .copyright a:not(:hover) {
     color: var(--color-white-fixed);
 }
+
 .footer .footer-nav-bottom ul li a {
     color: var(--color-two-fixed);
 }
+
 .footer .footer-nav-bottom ul li a:hover {
     color: var(--color-one);
 }
@@ -160,17 +179,22 @@
 
 
 /* Style 2 */
+
 .footer.style2 ul li a {
     color: var(--color-white);
 }
+
 .footer.style2 ul li a:hover {
     color: var(--color-one);
 }
+
 .footer.style2 .widget-title {
     color: var(--color-white);
 }
 
+
 /* Totop */
+
 .totop {
     position: fixed;
     right: 30px;
@@ -180,6 +204,7 @@
     visibility: hidden;
     transition: var(--transition-base);
 }
+
 .totop.show {
     opacity: 1;
     visibility: visible;
@@ -244,6 +269,7 @@
 .footer-widget-with-border {
     position: relative;
 }
+
 .footer-widget-with-border::before,
 .footer-widget-with-border::after {
     content: '';
@@ -257,6 +283,7 @@
 .footer-widget-with-border::before {
     left: 0;
 }
+
 .footer-widget-with-border::after {
     right: 0;
 }
@@ -265,7 +292,6 @@
     border-color: var(--color-white-fixed);
     color: var(--color-white-fixed);
 }
-
 
 @media screen and (max-width: 1199.9px) {
     .footer-upper-contact .logo {
@@ -297,10 +323,12 @@
 }
 
 @media screen and (max-width: 767.9px) {
-    .footer-widget-with-border::before, .footer-widget-with-border::after {
+    .footer-widget-with-border::before,
+    .footer-widget-with-border::after {
         display: none;
     }
 }
+
 @media screen and (max-width: 575.9px) {
     .footer-upper-contact .wptb-icon-box1 .wptb-item--inner {
         border-width: 0px;

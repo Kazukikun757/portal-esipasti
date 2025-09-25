@@ -20,7 +20,7 @@
     <link href="../assets/img/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
 
     <!-- Page Title -->
-    <title>Kimono - Photography Agency</title>
+    <title>Portal SIPASTI</title>
 
     <!-- Styles Include -->
     <link rel="stylesheet" href="../assets/css/main.css">
@@ -61,7 +61,8 @@
             <div class="wptb-item--inner flex-start">
                 <div class="wptb-item--icon"><i class="bi bi-envelope"></i></div>
                 <div class="wptb-item--holder">
-                    <p class="wptb-item--description"><a href="mailto:kimocare@gmail.com">kimocare@gmail.com</a></p>
+                    <p class="wptb-item--description"><a href="mailto:bakarashshiddiq2@gmail.com">sipasti@gmail.com</a>
+                    </p>
                 </div>
             </div>
         </div>
@@ -155,7 +156,7 @@
                 <div class="wptb-item--inner flex-start">
                     <div class="wptb-item--icon"><i class="bi bi-envelope"></i></div>
                     <div class="wptb-item--holder">
-                        <p class="wptb-item--description"><a href="mailto:kimocare@gmail.com">kimocare@gmail.com</a></p>
+                        <p class="wptb-item--description"><a href="mailto:sipasti@gmail.com">sipasti@gmail.com</a></p>
                     </div>
                 </div>
             </div>
@@ -164,7 +165,7 @@
                 <div class="wptb-item--inner flex-start">
                     <div class="wptb-item--icon"><i class="bi bi-geo-alt"></i></div>
                     <div class="wptb-item--holder">
-                        <p class="wptb-item--description"><a href="contact-1.html">28 Street, New York, USA</a></p>
+                        <p class="wptb-item--description"><a href="contact-1.html">Jl. Tjilik Riwut KM. 1 No. 5</a></p>
                     </div>
                 </div>
             </div>
@@ -228,18 +229,21 @@
                                     <img src="../assets/img/pky/pkuy.jpg" alt="img">
                                     <div class="menu-grid">
                                         <?php if (isset($menus) && !empty($menus)): ?>
-                                            <?php foreach ($menus as $menu): ?>
-                                                <a href="<?= $menu['link'] ?>" class="menu-item">
-                                                    <div class="menu-icon"><img src="<?= $menu['icon'] ?>?v=<?= $cache_buster ?>" alt="<?= $menu['name'] ?>"></div>
-                                                    <div class="menu-text"><?= $menu['name'] ?></div>
-                                                </a>
-                                            <?php endforeach; ?>
+                                        <?php foreach ($menus as $menu): ?>
+                                        <a href="<?= $menu['link'] ?>" class="menu-item">
+                                            <div class="menu-icon"><img
+                                                    src="<?= $menu['icon'] ?>?v=<?= $cache_buster ?>"
+                                                    alt="<?= $menu['name'] ?>"></div>
+                                            <div class="menu-text"><?= $menu['name'] ?></div>
+                                        </a>
+                                        <?php endforeach; ?>
                                         <?php else: ?>
-                                            <!-- Fallback jika tidak ada menu -->
-                                            <a href="#" class="menu-item">
-                                                <div class="menu-icon"><img src="../assets/img/icons/default.svg" alt=""></div>
-                                                <div class="menu-text">Menu Tidak Tersedia</div>
-                                            </a>
+                                        <!-- Fallback jika tidak ada menu -->
+                                        <a href="#" class="menu-item">
+                                            <div class="menu-icon"><img src="../assets/img/icons/default.svg" alt="">
+                                            </div>
+                                            <div class="menu-text">Menu Tidak Tersedia</div>
+                                        </a>
                                         <?php endif; ?>
                                     </div>
                                     <div class="wptb-slider--inner">
@@ -348,33 +352,36 @@
             </div>
         </div>
 
-        <!-- About Kimono -->
-        <section class="wptb-about-one bg-image" style="background-image: url('../assets/img/pky/pkuy.jpg'); background-position: 80%;">
+        <!-- About SIPASTI -->
+        <section class="wptb-about-one">
             <div class="container">
                 <div class="wptb-heading">
                     <div class="wptb-item--inner text-center">
                         <h6 class="wptb-item--subtitle"><span>//</span> Tentang SiPasti</h6>
-                        <h1 class="wptb-item--title">Sistem Informasi<span> </br> Pengawasan dan Tindak Lanjut</span></h1>
-                        <p class="wptb-about--text-one mb-4">Merupakan Sistem Informasi yang menunjang kinerja pengawasan yang dilakukan oleh Para Auditor Inspektorat, serta merupakan sebuah sistem tindak lanjut bagi OPD yang menjadi sasaran pengawasan/pemeriksaan.</p>
+                        <h1 class="wptb-item--title">Sistem Informasi<span> </br> Pengawasan dan Tindak Lanjut</span>
+                        </h1>
+                        <p class="wptb-about--text-one mb-4">Merupakan Sistem Informasi yang menunjang kinerja
+                            pengawasan yang dilakukan oleh Para Auditor Inspektorat, serta merupakan sebuah sistem
+                            tindak lanjut bagi OPD yang menjadi sasaran pengawasan/pemeriksaan.</p>
                     </div>
                 </div>
-
             </div>
         </section>
 
-        <div class="divider-line-hr"></div>
 
     </main>
 
-    <!-- Footer -->
-    <footer class="footer style1 bg-image-2" style="background-image: url('../assets/img/background/bg-5.png');">
-        <!-- Footer Bottom Part -->
+    <footer class="footer style1" style="background-color: #212121;">
         <div class="footer-bottom">
             <div class="container">
-                <div class="footer-bottom-inner">
+                <div class="footer-bottom-inner"
+                    style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+
                     <div class="copyright">
-                        <p><a href="https://themeforest.net/user/wpthemebooster">kimono</a> photography, All Rights Reserved</p>
+                        <p style="margin: 0;"><a href="https://themeforest.net/user/wpthemebooster">SIPASTI</a>
+                            Sistem Informasi Pengawasan dan Tindak Lanjut</p>
                     </div>
+
                     <div class="social-box style-oval">
                         <ul>
                             <li><a href="https://www.facebook.com/" class="bi bi-facebook"></a></li>
@@ -383,6 +390,7 @@
                             <li><a href="https://www.behance.com/" class="bi bi-behance"></a></li>
                         </ul>
                     </div>
+
                 </div>
             </div>
         </div>
