@@ -1,0 +1,222 @@
+/* public/assets/css/admin_style.css */
+
+/* Import Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* CSS Variables untuk Tema */
+:root {
+    --background-color: #f9fafb; /* Abu-abu sangat muda */
+    --sidebar-bg: #ffffff;
+    --card-bg: #ffffff;
+    --text-color: #1f2937;
+    --text-muted: #6b7280;
+    --border-color: #e5e7eb;
+    --primary-accent: #8b5cf6; /* Ungu */
+    --primary-accent-light: #ede9fe;
+    --danger-accent: #ec4899; /* Pink */
+    --danger-accent-light: #fce7f3;
+}
+
+/* Global Styles */
+body {
+    background-color: var(--background-color);
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);
+}
+
+/* Sidebar */
+.sidebar {
+    min-height: 100vh;
+    background: var(--sidebar-bg);
+    border-right: 1px solid var(--border-color);
+    padding-top: 1.5rem;
+}
+
+.sidebar .sidebar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 2rem;
+    display: block;
+    text-decoration: none;
+}
+
+.sidebar .nav-link {
+    color: var(--text-muted);
+    font-weight: 500;
+    border-radius: 8px;
+    margin: 4px 0;
+    transition: all 0.2s ease-in-out;
+    padding: 12px 16px;
+}
+
+.sidebar .nav-link:hover {
+    background: var(--background-color);
+    color: var(--primary-accent);
+}
+
+.sidebar .nav-link.active {
+    background: var(--primary-accent);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Navbar Atas */
+.top-navbar {
+    background: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 2rem;
+    margin-left: -15px; /* Sesuaikan dengan padding container */
+    margin-right: -15px;
+}
+
+.top-navbar .page-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin: 0;
+}
+
+/* Main Content Area */
+.content-wrapper {
+    padding: 1.5rem;
+}
+
+/* Card Style */
+.card-clean {
+    background: var(--card-bg);
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+.card-clean .card-header {
+    background: transparent;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Table Style */
+.table-clean {
+    border-collapse: separate;
+    border-spacing: 0 8px; /* Memberi jarak antar baris */
+}
+
+.table-clean thead th {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: none;
+}
+
+.table-clean tbody tr {
+    background: var(--card-bg);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.table-clean tbody tr:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.07);
+}
+
+.table-clean tbody td {
+    padding: 1rem;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+.table-clean tbody td:first-child {
+    border-left: 1px solid var(--border-color);
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+.table-clean tbody td:last-child {
+    border-right: 1px solid var(--border-color);
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+/* PERBAIKAN IKON DI TABEL */
+.icon-cell-preview {
+    width: 45px;
+    height: 45px;
+    background-color: var(--background-color);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    overflow: hidden;
+}
+
+.icon-cell-preview img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* Button Styles */
+.btn-add {
+    background: var(--primary-accent);
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.2s;
+    padding: 10px 20px;
+    border: none;
+}
+
+.btn-add:hover {
+    background: #7c3aed;
+    color: #fff;
+}
+
+.btn-action {
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 5px 10px;
+    transition: all 0.2s;
+}
+
+.btn-edit {
+    border: 1px solid var(--primary-accent);
+    color: var(--primary-accent);
+    background: var(--primary-accent-light);
+}
+
+.btn-edit:hover {
+    background: var(--primary-accent);
+    color: #fff;
+}
+
+.btn-delete {
+    border: 1px solid var(--danger-accent);
+    color: var(--danger-accent);
+    background: var(--danger-accent-light);
+}
+
+.btn-delete:hover {
+    background: var(--danger-accent);
+    color: #fff;
+}
+
+/* Badge Styles */
+.badge-soft {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    border-radius: 9999px;
+    font-weight: 600;
+}
+
+.bg-pastel-success {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.bg-pastel-gray {
+    background: #f3f4f6;
+    color: #374151;
+}
