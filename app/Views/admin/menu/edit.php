@@ -2,30 +2,25 @@
 
 <?= $this->section('content') ?>
 
-<div class="row mb-4">
-    <div class="col-md-6">
-        <a href="/admin/menu" class="btn btn-outline-secondary rounded-pill px-3">
-            <i class="fas fa-arrow-left"></i> Kembali
-        </a>
-    </div>
-</div>
-
-<div class="card border-0 shadow-sm rounded-3">
-    <div class="card-header bg-white border-0 pb-0">
-        <h5 class="fw-bold mb-1"
-            style="background: linear-gradient(90deg, #d8b4fe, #fbcfe8);
-                   -webkit-background-clip: text;
-                   -webkit-text-fill-color: transparent;">
-            Edit Menu
-        </h5>
-        <p class="text-muted small mb-0">Ubah detail menu sesuai kebutuhan</p>
+<div class="card card-clean">
+    <div class="card-header pb-0">
+        <div class="d-flex align-items-center">
+            <a href="/admin/menu" class="btn btn-outline-secondary btn-sm me-3">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+            <div>
+                <h5 class="fw-semibold text-dark mb-1">Edit Menu</h5>
+                <p class="text-muted mb-0"><small>Ubah detail menu sesuai kebutuhan</small></p>
+            </div>
+        </div>
     </div>
     <div class="card-body">
+
         <?php if (session()->has('errors')): ?>
             <div class="alert alert-danger rounded-3">
                 <ul class="mb-0">
                     <?php foreach (session('errors') as $error): ?>
-                        <li><?= $error ?></li>
+                        <li><?= esc($error) ?></li>
                     <?php endforeach; ?>
                 </ul>
             </div>
@@ -35,82 +30,93 @@
             <?= csrf_field() ?>
 
             <div class="row">
-                <!-- Form kiri -->
-                <div class="col-md-6">
+                <div class="col-md-7">
                     <div class="mb-3">
-                        <label for="name" class="form-label fw-semibold">Nama Menu</label>
-                        <input type="text"
-                            class="form-control rounded-3 border-secondary-subtle"
-                            id="name" name="name"
-                            value="<?= old('name') ?? $menu['name'] ?>" required>
+                        <label for="name-input" class="form-label fw-medium">Nama Menu</label>
+                        <input type="text" class="form-control" id="name-input" name="name" value="<?= esc(old('name', $menu['name'] ?? '')) ?>" required>
                     </div>
 
                     <div class="mb-3">
-                        <label for="link" class="form-label fw-semibold">Link</label>
-                        <input type="text"
-                            class="form-control rounded-3 border-secondary-subtle"
-                            id="link" name="link"
-                            value="<?= old('link') ?? $menu['link'] ?>" required>
-                        <small class="text-muted">Gunakan # untuk link kosong</small>
+                        <label for="link" class="form-label fw-medium">Link</label>
+                        <input type="text" class="form-control" id="link" name="link" value="<?= esc(old('link', $menu['link'] ?? '')) ?>" required>
+                        <small class="text-muted">Gunakan # untuk link kosong atau /nama-halaman untuk link internal.</small>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="icon" class="form-label fw-semibold">Icon (SVG atau PNG)</label>
-                        <input type="file"
-                            class="form-control rounded-3 border-secondary-subtle"
-                            id="icon" name="icon" accept=".svg,.png">
-                        <small class="text-muted">Maks 1MB. Format: SVG, PNG. Biarkan kosong jika tidak ingin mengubah icon.</small>
-                    </div>
-
-                    <div class="form-check mb-3">
-                        <input type="checkbox" class="form-check-input" id="active" name="active" value="1"
-                            <?= (old('active') ?? $menu['active']) ? 'checked' : '' ?>>
-                        <label class="form-check-label" for="active">Aktif</label>
+                    <div class="form-check form-switch mb-3">
+                        <input class="form-check-input" type="checkbox" role="switch" id="active" name="active" value="1" <?= (old('active', $menu['active'] ?? true)) ? 'checked' : '' ?>>
+                        <label class="form-check-label" for="active">Aktifkan Menu</label>
                     </div>
                 </div>
 
-                <!-- Preview kanan -->
-                <div class="col-md-6">
-                    <div class="card border-0 shadow-sm rounded-3">
-                        <div class="card-header bg-white border-0">
-                            <span class="fw-semibold">Preview</span>
-                        </div>
-                        <div class="card-body text-center">
-                            <div class="menu-item-preview p-4 rounded-3"
-                                style="background: linear-gradient(135deg, #d8b4fe, #fbcfe8);
-                                        color: #333; box-shadow: 0 6px 16px rgba(0,0,0,0.05);">
-                                <div class="menu-icon mb-2">
-                                    <img id="icon-preview" src="<?= $menu['icon'] ?>" alt="<?= $menu['name'] ?>"
-                                        style="width:48px; height:48px; object-fit:contain;">
-                                </div>
-                                <div class="fw-semibold" id="name-preview"><?= $menu['name'] ?></div>
+                <div class="col-md-5">
+                    <div class="mb-3">
+                        <label for="icon-input" class="form-label fw-medium">Icon (SVG atau PNG)</label>
+                        <input type="file" class="form-control" id="icon-input" name="icon" accept=".svg,.png">
+                        <small class="text-muted">Biarkan kosong jika tidak ingin mengubah icon.</small>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-medium">Preview</label>
+                        <div class="menu-item-preview">
+                            <div class="menu-icon">
+                                <img id="icon-preview" src="<?= base_url($menu['icon']) ?>" alt="Icon Preview">
                             </div>
+                            <div class="fw-semibold" id="name-preview"><?= esc($menu['name']) ?></div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Tombol -->
-            <div class="mt-4">
-                <button type="submit" class="btn btn-primary rounded-pill px-4">Simpan Perubahan</button>
-                <a href="/admin/menu" class="btn btn-outline-secondary rounded-pill px-4">Batal</a>
+            <hr class="my-4">
+
+            <div class="d-flex justify-content-end">
+                <a href="/admin/menu" class="btn btn-outline-secondary me-2">Batal</a>
+                <button type="submit" class="btn btn-add">Simpan Perubahan</button>
             </div>
         </form>
     </div>
 </div>
+
+<style>
+    /* Memberi gaya khusus untuk wadah preview di halaman edit */
+    .menu-item-preview {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+        min-height: 180px;
+        /* Memberi tinggi minimal agar rapi */
+    }
+
+    /* KUNCI PERBAIKAN: Mengatur ukuran gambar preview */
+    #icon-preview {
+        max-width: 80px;
+        /* Batasi lebar maksimum gambar */
+        max-height: 80px;
+        /* Batasi tinggi maksimum gambar */
+        height: auto;
+        object-fit: contain;
+        /* Pastikan gambar pas tanpa peot */
+        display: block;
+        margin-bottom: 1rem;
+        /* Memberi jarak ke teks nama di bawahnya */
+    }
+</style>
 
 <?= $this->endSection() ?>
 
 <?= $this->section('scripts') ?>
 <script>
     $(function() {
-        // Preview name
-        $("#name").on('input', function() {
-            $("#name-preview").text($(this).val() || "Nama Menu");
+        // Preview untuk nama menu
+        $("#name-input").on('input', function() {
+            let menuName = $(this).val();
+            $("#name-preview").text(menuName || "Nama Menu");
         });
 
-        // Preview icon
-        $("#icon").on('change', function() {
+        // Preview untuk ikon
+        $("#icon-input").on('change', function(event) {
             if (this.files && this.files[0]) {
                 var reader = new FileReader();
                 reader.onload = function(e) {
