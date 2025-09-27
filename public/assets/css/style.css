@@ -1,13 +1,12 @@
 /* Theme Building Customized CSS on premade components */
-
-
+/* Import Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap");
 /* About Company */
 
 .wptb-about-one {
     position: relative;
     overflow: hidden;
 }
-
 
 /* DITAMBAHKAN: Aturan baru untuk memperbesar font judul dan subjudul */
 
@@ -92,9 +91,7 @@
     }
 }
 
-
 /* (Sisa kode CSS Anda yang lain tetap sama di bawah sini...) */
-
 
 /* About Company - Two */
 
@@ -207,6 +204,7 @@
 .wptb-agency-experience .wptb-heading {
     display: flex;
     margin-bottom: 0px;
+    margin-left: 50px;
 }
 
 .wptb-agency-experience .wptb-heading .wptb-image-single {
@@ -214,7 +212,7 @@
 }
 
 .wptb-agency-experience .wptb-heading .wptb-image-single .wptb-item--image {
-    margin-left: -60px;
+    margin-left: -10px;
 }
 
 .wptb-agency-experience .wptb-heading .wptb-item--title span {
@@ -264,11 +262,13 @@
     padding-bottom: 100px;
 }
 
-.wptb-album-one .swiper-gallery-two .swiper-slide.swiper-slide-active .grid-item {
+.wptb-album-one
+    .swiper-gallery-two
+    .swiper-slide.swiper-slide-active
+    .grid-item {
     border-radius: 20px;
     box-shadow: 0px 25px 60px 15px rgb(0, 0, 0, 0.35);
 }
-
 
 /* FAQ's One */
 
@@ -285,7 +285,11 @@
     border-color: rgba(var(--color-white-rgb), 0.4);
 }
 
-.wptb-faq-one .wptb-faq--inner .wptb-accordion1 .wptb--item.active .wptb-item-title {
+.wptb-faq-one
+    .wptb-faq--inner
+    .wptb-accordion1
+    .wptb--item.active
+    .wptb-item-title {
     border-bottom: 1px solid rgba(var(--color-white-rgb), 0.4);
 }
 
@@ -312,7 +316,6 @@
     background-size: auto;
 }
 
-
 /* Radial Progress */
 
 .wptb-radial-progress-one {
@@ -320,20 +323,17 @@
     padding-bottom: 75px;
 }
 
-
 /* Appointform */
 
 .wptb-appointment-form-one {
     position: relative;
 }
 
-
 /* Clients/Partners */
 
 .wptb-partners-one {
     padding: 80px 0px;
 }
-
 
 /* Work Process */
 
@@ -350,7 +350,6 @@
         transform: translateX(-50%);
     }
 }
-
 
 /* Awards */
 
@@ -408,7 +407,6 @@
     }
 }
 
-
 /* FAQ's Two */
 
 .wptb-faq-two {
@@ -421,7 +419,7 @@
     z-index: 1;
 }
 
-.wptb-faq-two .wptb-faq--inner+.wptb-image-single {
+.wptb-faq-two .wptb-faq--inner + .wptb-image-single {
     z-index: -1;
 }
 
@@ -452,7 +450,6 @@
     text-transform: uppercase;
 }
 
-
 /* Why Choose Two */
 
 .wptb-why-choose-two .wptb-image-single--two {
@@ -464,7 +461,6 @@
     padding-bottom: 300px;
 }
 
-
 /* Contact Page */
 
 .wptb-contact-page-wrapper {
@@ -472,7 +468,6 @@
     padding-right: 60px;
     transition: var(--transition-base);
 }
-
 
 /* Contact Form */
 
@@ -493,9 +488,21 @@
     top: 0;
     right: 0;
     bottom: 0;
-    background: -webkit-linear-gradient( 180deg, rgba(var(--color-dark-one-rgb), 1) 70%, rgba(var(--color-black-rgb), 0.8) 100%);
-    background: -moz-linear-gradient( 180deg, rgba(var(--color-dark-one-rgb), 1) 70%, rgba(var(--color-black-rgb), 0.8) 100%);
-    background: linear-gradient( 180deg, rgba(var(--color-dark-one-rgb), 1) 70%, rgba(var(--color-black-rgb), 0.8) 100%);
+    background: -webkit-linear-gradient(
+        180deg,
+        rgba(var(--color-dark-one-rgb), 1) 70%,
+        rgba(var(--color-black-rgb), 0.8) 100%
+    );
+    background: -moz-linear-gradient(
+        180deg,
+        rgba(var(--color-dark-one-rgb), 1) 70%,
+        rgba(var(--color-black-rgb), 0.8) 100%
+    );
+    background: linear-gradient(
+        180deg,
+        rgba(var(--color-dark-one-rgb), 1) 70%,
+        rgba(var(--color-black-rgb), 0.8) 100%
+    );
 }
 
 .wptb-contact-form .wptb-form--wrapper {
@@ -507,7 +514,7 @@
     background: linear-gradient(180deg, #141414 0%, #3e3a3a 100%);
 }
 
-.wptb-contact-form .wptb-form--wrapper>* {
+.wptb-contact-form .wptb-form--wrapper > * {
     position: relative;
     z-index: 1;
 }
@@ -535,7 +542,6 @@
     z-index: 0;
 }
 
-
 /* Index-1, Contact-1 */
 
 .wptb-contact-form.style1 .form-control {
@@ -545,7 +551,6 @@
     border-width: 0px;
     border-bottom-width: 1px;
 }
-
 
 /* Index-4 */
 
@@ -565,7 +570,6 @@
 .wptb-contact-form.style2 textarea.form-control {
     border-radius: 20px;
 }
-
 
 /* Partners Page */
 
@@ -596,10 +600,9 @@
     gap: 60px;
 }
 
-.wptb-radio-list+.wptb-radio-list {
+.wptb-radio-list + .wptb-radio-list {
     margin-top: 10px;
 }
-
 
 /* Project Information */
 
@@ -691,7 +694,10 @@
     width: 50%;
 }
 
-.wptb-project-info1 .wptb-item--footer .wptb-footer--item+.wptb-footer--item::before {
+.wptb-project-info1
+    .wptb-item--footer
+    .wptb-footer--item
+    + .wptb-footer--item::before {
     content: "";
     position: absolute;
     left: -30px;
@@ -721,9 +727,7 @@
     margin-bottom: 0px;
 }
 
-
 /* Error 404 */
-
 
 /* Coming Soon */
 
@@ -747,7 +751,7 @@
 
 .wptb-credential .wptb-heading .wptb-item--title {
     text-align: center;
-    font-size: 60px;
+    font-size: 20px;
     font-style: normal;
     font-weight: var(--fw-medium);
     line-height: 74px;
@@ -917,7 +921,6 @@
     margin-right: 40px;
 }
 
-
 /* .wptb-credential #countdown ul li:not(:last-child)::after {
     content: ':';
     position: absolute;
@@ -961,7 +964,6 @@
     }
 }
 
-
 /* Flatpickr */
 
 .flatpickr-time input.flatpickr-hour,
@@ -974,7 +976,6 @@
     height: 100%;
     border-width: 0px;
 }
-
 
 /* World Map */
 
@@ -1027,7 +1028,7 @@
     position: relative;
 }
 
-.wptb-map-item-list .wptb-item--inner>a {
+.wptb-map-item-list .wptb-item--inner > a {
     position: absolute;
     top: 0;
     left: 0;
@@ -1094,7 +1095,10 @@
     margin: 0;
 }
 
-.wptb-map-item-list .wptb-item--inner .wptb-item--holder .wptb-item--title:before {
+.wptb-map-item-list
+    .wptb-item--inner
+    .wptb-item--holder
+    .wptb-item--title:before {
     content: "";
     background-color: var(--color-one);
     clip-path: polygon(51% 100%, 0 0, 100% 0);
@@ -1113,7 +1117,6 @@
         display: inline-block;
     }
 }
-
 
 /* Contact Page Map */
 
@@ -1159,7 +1162,7 @@
     position: relative;
 }
 
-.wptb-team-one .swiper-slide+.swiper-slide::before {
+.wptb-team-one .swiper-slide + .swiper-slide::before {
     content: "";
     position: absolute;
     left: -25px;
@@ -1179,9 +1182,7 @@
     bottom: 0;
 }
 
-
 /* Team Details */
-
 
 /* Team Details */
 
@@ -1216,7 +1217,6 @@
     margin-bottom: 20px;
 }
 
-
 /* Social List */
 
 .wptb-team-social {
@@ -1240,7 +1240,7 @@
     line-height: var(--fs-30);
 }
 
-.wptb-team-social .wptb-team-social-list li+li {
+.wptb-team-social .wptb-team-social-list li + li {
     padding-left: 20px;
 }
 
@@ -1269,7 +1269,11 @@
 }
 
 .team-details-content .wptb-single--designation {
-    background: -webkit-linear-gradient( 90deg, var(--color-one) 0%, var(--color-one) 100%);
+    background: -webkit-linear-gradient(
+        90deg,
+        var(--color-one) 0%,
+        var(--color-one) 100%
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 32px;
@@ -1336,7 +1340,6 @@
     display: block;
 }
 
-
 /* Instagram */
 
 .wptb-instagram--gallery {
@@ -1369,7 +1372,6 @@
     font-size: 26px;
 }
 
-
 /* Product List */
 
 .wptb-product-list .widget {
@@ -1392,7 +1394,6 @@
 .wptb-product-list .widget-title::after {
     display: none;
 }
-
 
 /* Office Address */
 
@@ -1425,7 +1426,6 @@
     left: 0;
     right: 0;
 }
-
 
 /* Color Mode Switcher */
 
@@ -1463,7 +1463,6 @@
         transform: scale(1);
     }
 }
-
 
 /* Gradient Style Homepage */
 
@@ -1542,7 +1541,12 @@
     padding: 50px 0px;
 }
 
-.theme-style--gradient .wptb-testimonial1 .wptb-item--inner .wptb-item--icon svg path {
+.theme-style--gradient
+    .wptb-testimonial1
+    .wptb-item--inner
+    .wptb-item--icon
+    svg
+    path {
     fill: rgba(var(--color-white-fixed-rgb), 0.2);
 }
 
@@ -1556,21 +1560,33 @@
     border: 4px solid rgba(var(--color-white-fixed-rgb), 0.25);
 }
 
-.theme-style--gradient .wptb-testimonial1 .wptb-item--inner .wptb-item--description,
+.theme-style--gradient
+    .wptb-testimonial1
+    .wptb-item--inner
+    .wptb-item--description,
 .theme-style--gradient .wptb-testimonial1 .wptb-item--inner .wptb-item--title {
     color: var(--color-white-fixed);
 }
 
-.theme-style--gradient .wptb-testimonial1 .wptb-item--inner .wptb-item--description {
+.theme-style--gradient
+    .wptb-testimonial1
+    .wptb-item--inner
+    .wptb-item--description {
     font-size: 30px;
     line-height: 46px;
 }
 
-.theme-style--gradient .wptb-testimonial1 .wptb-item--inner .wptb-item--meta-rating {
+.theme-style--gradient
+    .wptb-testimonial1
+    .wptb-item--inner
+    .wptb-item--meta-rating {
     font-size: 22px;
 }
 
-.theme-style--gradient .wptb-testimonial1 .wptb-item--inner .wptb-item--designation {
+.theme-style--gradient
+    .wptb-testimonial1
+    .wptb-item--inner
+    .wptb-item--designation {
     color: var(--color-two-fixed);
 }
 
@@ -1579,7 +1595,9 @@
 }
 
 .theme-style--gradient .wptb-swiper-navigation.style1 .wptb-swiper-arrow,
-.theme-style--gradient .wptb-swiper-navigation.style1 .wptb-swiper-arrow::before {
+.theme-style--gradient
+    .wptb-swiper-navigation.style1
+    .wptb-swiper-arrow::before {
     border-color: rgba(var(--color-white-rgb), 0.2);
 }
 
@@ -1620,11 +1638,15 @@
     height: 74px;
 }
 
-.theme-style--gradient .wptb-swiper-navigation.style1 .wptb-swiper-arrow::before {
+.theme-style--gradient
+    .wptb-swiper-navigation.style1
+    .wptb-swiper-arrow::before {
     border-color: var(--color-white-fixed);
 }
 
-.theme-style--gradient .wptb-swiper-navigation.style1 .wptb-swiper-arrow:hover::before {
+.theme-style--gradient
+    .wptb-swiper-navigation.style1
+    .wptb-swiper-arrow:hover::before {
     background-color: rgba(var(--color-white-fixed-rgb), 0.3);
 }
 
@@ -1640,7 +1662,6 @@
     width: 150%;
     padding: 20px 0px;
 }
-
 
 /* .wptb-gallery-box::before,
 .wptb-gallery-box::after {
@@ -1710,7 +1731,7 @@
     width: 100%;
 }
 
-.both-version.wptb-item-layer img+img {
+.both-version.wptb-item-layer img + img {
     display: none;
 }
 
@@ -1756,7 +1777,6 @@ a.wptb-image-popup {
     background: var(--color-dark-three-fixed);
 }
 
-
 /* Theme Style Olive */
 
 body.theme-style--olive {
@@ -1764,7 +1784,11 @@ body.theme-style--olive {
 }
 
 .theme-style--olive .wptb-about-two {
-    background: linear-gradient( 180deg, var(--color-dark-one) 0%, var(--color-dark-thirteen) 100%);
+    background: linear-gradient(
+        180deg,
+        var(--color-dark-one) 0%,
+        var(--color-dark-thirteen) 100%
+    );
 }
 
 .theme-style--olive .wptb-funfacts--area {
@@ -1807,7 +1831,6 @@ body.theme-style--olive {
     background-color: var(--color-dark-fifteen);
     margin-bottom: 50px;
 }
-
 
 /* Distortion Effects */
 
@@ -1864,19 +1887,14 @@ body.theme-style--olive {
     color: #fff;
     text-decoration: none;
     transition: transform 0.3s, color 0.3s;
-    padding: 15px 10px;
-    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 5px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(2px);
 }
 
 .menu-item:hover {
     transform: translateY(-5px);
     color: var(--color-one);
     /* atau warna tema kamu */
-    background-color: rgba(0, 0, 0, 0.9);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 
 .menu-icon img {
@@ -1886,8 +1904,135 @@ body.theme-style--olive {
     margin-bottom: 10px;
 }
 
+.menu-icon-image {
+    width: 20%;
+}
+
 .menu-text {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 500;
-    color: #fff;
+    color: #161616;
+}
+
+/* Background utama putih */
+body {
+    background-color: #ffffff;
+    color: #333; /* teks tetap netral */
+    font-family: "Inter", sans-serif;
+}
+
+.wptb-slider.style1 {
+    background: #fff;
+    padding: 3rem 0;
+    position: relative;
+    overflow: hidden;
+
+    background: radial-gradient(
+        135deg,
+        /* pink pastel */ #a18cd1 0%,
+        #f8cdda 40%,
+        /* ungu soft */ #ffffff 100% /* biru gelap */
+    );
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+}
+
+/* Blob Aksen */
+.wptb-slider.style1::after {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(
+        circle at center,
+        rgba(255, 192, 203, 0.45),
+        rgba(186, 104, 200, 0.35)
+    );
+    border-radius: 50%;
+    top: -150px;
+    right: -150px;
+    filter: blur(80px);
+    z-index: 0;
+}
+
+/* Judul */
+.wptb-item--title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.wptb-item--title span {
+    background: linear-gradient(90deg, #f8c6d8, #c9a7f4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Outline text */
+.text-outline {
+    color: transparent;
+    -webkit-text-stroke: 2px #c9a7f4; /* ungu pastel outline */
+    opacity: 0.4;
+}
+
+/* Sidebar toggle */
+.aside-open--inner span {
+    background: linear-gradient(90deg, #f8c6d8, #c9a7f4);
+}
+
+.wptb-heading .wptb-item--title {
+    font-family: "Inter", sans-serif;
+    font-weight: 800;
+    font-size: 3rem;
+    line-height: 1.1; /* lebih rapat */
+    color: #333;
+    margin-bottom: 0.25rem; /* jarak antar block lebih kecil */
+}
+
+.wptb-heading .wptb-item--title span {
+    background: linear-gradient(90deg, #d16ba5, #c777b9, #ba83ca);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+
+.wptb-heading .text-outline {
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(200, 150, 200, 0.35);
+    position: absolute;
+    left: 0;
+    top: 0.25rem; /* lebih dekat dengan teks utama */
+    z-index: -1;
+}
+
+.pattern-layer {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(
+        circle,
+        rgba(186, 104, 200, 0.25) 1.5px,
+        transparent 1.5px
+    );
+    background-size: 30px 30px;
+    z-index: 0;
+    transition: background-position 0.15s ease-out;
+    pointer-events: none;
+}
+
+@keyframes floatPattern {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }

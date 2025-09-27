@@ -216,6 +216,7 @@
     <main class="wrapper">
         <!-- Slider Section -->
         <section class="wptb-slider style1">
+            <div class="pattern-layer"></div>
             <div class="swiper-container wptb-swiper-slider-one">
                 <!-- swiper slides -->
                 <div class="swiper-wrapper">
@@ -228,21 +229,21 @@
                                 <div class="container">
                                     <div class="menu-grid">
                                         <?php if (isset($menus) && !empty($menus)): ?>
-                                        <?php foreach ($menus as $menu): ?>
-                                        <a href="<?= $menu['link'] ?>" class="menu-item">
-                                            <div class="menu-icon"><img
-                                                    src="<?= $menu['icon'] ?>?v=<?= $cache_buster ?>"
-                                                    alt="<?= $menu['name'] ?>"></div>
-                                            <div class="menu-text"><?= $menu['name'] ?></div>
-                                        </a>
-                                        <?php endforeach; ?>
+                                            <?php foreach ($menus as $menu): ?>
+                                                <a href="<?= $menu['link'] ?>" class="menu-item">
+                                                    <div class="menu-icon"><img
+                                                            src="<?= $menu['icon'] ?>?v=<?= $cache_buster ?>"
+                                                            alt="<?= $menu['name'] ?>"></div>
+                                                    <div class="menu-text"><?= $menu['name'] ?></div>
+                                                </a>
+                                            <?php endforeach; ?>
                                         <?php else: ?>
-                                        <!-- Fallback jika tidak ada menu -->
-                                        <a href="#" class="menu-item">
-                                            <div class="menu-icon"><img src="../assets/img/icons/default.svg" alt="">
-                                            </div>
-                                            <div class="menu-text">Menu Tidak Tersedia</div>
-                                        </a>
+                                            <!-- Fallback jika tidak ada menu -->
+                                            <a href="#" class="menu-item">
+                                                <div class="menu-icon"><img src="../assets/img/icons/default.svg" alt="">
+                                                </div>
+                                                <div class="menu-text">Menu Tidak Tersedia</div>
+                                            </a>
                                         <?php endif; ?>
                                     </div>
                                     <div class="">
@@ -394,6 +395,16 @@
     <div class="totop">
         <a href="#"><i class="bi bi-chevron-up"></i></a>
     </div>
+
+
+    <script>
+        document.addEventListener("mousemove", function(e) {
+            const pattern = document.querySelector(".pattern-layer");
+            const x = (e.clientX / window.innerWidth) * 30;
+            const y = (e.clientY / window.innerHeight) * 30;
+            pattern.style.backgroundPosition = `${x}px ${y}px`;
+        });
+    </script>
 
 
     <!-- Core JS -->
