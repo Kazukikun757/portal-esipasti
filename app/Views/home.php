@@ -225,8 +225,7 @@
                             <!-- Layer Image -->
 
                             <div class="wptb-slider--content">
-                                <div class="wptb-slider--image">
-                                    <img src="../assets/img/pky/pkuy.jpg" alt="img">
+                                <div class="container">
                                     <div class="menu-grid">
                                         <?php if (isset($menus) && !empty($menus)): ?>
                                         <?php foreach ($menus as $menu): ?>
@@ -246,12 +245,13 @@
                                         </a>
                                         <?php endif; ?>
                                     </div>
-                                    <div class="wptb-slider--inner">
+                                    <div class="">
                                         <div class="wptb-heading">
                                             <div class="wptb-item--inner">
                                                 <h1 class="wptb-item--title">Portal <br> <span>Sipasti</span></h1>
-                                                <h1 class="wptb-item--title text-outline">Folio</h1>
+                                                <h1 class="wptb-item--title text-outline">Sipasti</h1>
                                             </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -263,12 +263,7 @@
             </div>
 
             <!-- Left Pane -->
-            <div class="wptb-left-pane justify-content-center justify-content-xl-between">
-                <div class="logo d-none d-xl-block">
-                    <a href="#" class="light_logo"><img src="../assets/img/logomiring.png" alt="logo"></a>
-                    <a href="#" class="dark_logo"><img src="../assets/img/logomiring.png" alt="logo"></a>
-                </div>
-
+            <div class="ml-5 justify-content-center justify-content-xl-between">
                 <div class="aside_open d-none d-xl-flex">
                     <div class="aside-open--inner">
                         <span></span>
@@ -280,7 +275,7 @@
         </section>
 
         <!-- Text Marquee -->
-        <div class="wptb-marquee">
+        <div class="wptb-marquee mt-5 mb-0 pb-0">
             <div class="wptb-text-marquee1 wptb-slide-to-left">
                 <div class="wptb-item--container">
                     <div class="wptb-item--inner">
@@ -353,14 +348,14 @@
         </div>
 
         <!-- About SIPASTI -->
-        <section class="wptb-about-one">
+        <section class="container">
             <div class="container">
                 <div class="wptb-heading">
                     <div class="wptb-item--inner text-center">
                         <h6 class="wptb-item--subtitle"><span>//</span> Tentang SiPasti</h6>
                         <h1 class="wptb-item--title">Sistem Informasi<span> </br> Pengawasan dan Tindak Lanjut</span>
                         </h1>
-                        <p class="wptb-about--text-one mb-4">Merupakan Sistem Informasi yang menunjang kinerja
+                        <p class="wptb-about--text-one mb-4 w-75 mx-auto fs-20">Merupakan Sistem Informasi yang menunjang kinerja
                             pengawasan yang dilakukan oleh Para Auditor Inspektorat, serta merupakan sebuah sistem
                             tindak lanjut bagi OPD yang menjadi sasaran pengawasan/pemeriksaan.</p>
                     </div>
