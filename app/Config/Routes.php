@@ -7,6 +7,24 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 
+// Authentication Routes
+$routes->group('', ['namespace' => 'App\Controllers'], function ($routes) {
+    // Login routes
+    $routes->get('login', 'AuthController::login');
+    $routes->post('login', 'AuthController::doLogin');
+
+    // Register routes
+    $routes->get('register', 'AuthController::register');
+    $routes->post('register', 'AuthController::doRegister');
+
+    // Logout route
+    $routes->get('logout', 'AuthController::logout');
+
+    // Profile routes
+    $routes->get('profile', 'AuthController::profile');
+    $routes->post('profile', 'AuthController::updateProfile');
+});
+
 // Admin routes
 $routes->group('admin', function ($routes) {
     $routes->get('menu', 'Admin\MenuController::index');
