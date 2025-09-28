@@ -1,21 +1,23 @@
-<div class="row justify-content-center">
+<?= $this->extend('auth/layout/base') ?>
+
+<?= $this->section('title') ?>Login<?= $this->endSection() ?>
+
+<?= $this->section('content') ?>
+<div class="row justify-content-center w-100 mx-0">
     <div class="col-md-6 col-lg-4">
-        <div class="card shadow-sm">
+        <div class="card shadow-lg">
             <div class="card-body p-5">
                 <div class="text-center mb-4">
                     <i class="fas fa-sign-in-alt fa-3x text-primary mb-3"></i>
-                    <h1 class="h3 mb-3 fw-normal">Sign In</h1>
+                    <h1 class="h3 mb-3 fw-bold">Sign In</h1>
                     <p class="text-muted">Masuk ke akun Anda untuk melanjutkan</p>
                 </div>
 
                 <?= form_open('login', ['class' => 'needs-validation', 'novalidate' => true]) ?>
-
                 <div class="mb-3">
                     <label for="login_field" class="form-label">Email atau Username</label>
                     <div class="input-group">
-                        <span class="input-group-text">
-                            <i class="fas fa-user"></i>
-                        </span>
+                        <span class="input-group-text"><i class="fas fa-user"></i></span>
                         <input type="text"
                             class="form-control <?= isset($validation) && $validation->hasError('login_field') ? 'is-invalid' : '' ?>"
                             id="login_field"
@@ -34,9 +36,7 @@
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
                     <div class="input-group">
-                        <span class="input-group-text">
-                            <i class="fas fa-lock"></i>
-                        </span>
+                        <span class="input-group-text"><i class="fas fa-lock"></i></span>
                         <input type="password"
                             class="form-control <?= isset($validation) && $validation->hasError('password') ? 'is-invalid' : '' ?>"
                             id="password"
@@ -56,18 +56,14 @@
 
                 <div class="mb-3 form-check">
                     <input type="checkbox" class="form-check-input" id="remember_me" name="remember_me">
-                    <label class="form-check-label" for="remember_me">
-                        Ingat saya
-                    </label>
+                    <label class="form-check-label" for="remember_me">Ingat saya</label>
                 </div>
 
                 <div class="d-grid gap-2">
                     <button class="btn btn-primary btn-lg" type="submit">
-                        <i class="fas fa-sign-in-alt me-2"></i>
-                        Sign In
+                        <i class="fas fa-sign-in-alt me-2"></i> Sign In
                     </button>
                 </div>
-
                 <?= form_close() ?>
 
                 <hr class="my-4">
@@ -75,16 +71,16 @@
                 <div class="text-center">
                     <p class="mb-0">
                         Belum punya akun?
-                        <a href="<?= base_url('register') ?>" class="text-primary text-decoration-none fw-semibold">
-                            Daftar sekarang
-                        </a>
+                        <a href="<?= base_url('register') ?>" class="text-primary fw-semibold">Daftar sekarang</a>
                     </p>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<?= $this->endSection() ?>
 
+<?= $this->section('scripts') ?>
 <script>
     $(document).ready(function() {
         // Toggle password visibility
@@ -101,7 +97,7 @@
             }
         });
 
-        // Form validation
+        // Validation
         $('form').submit(function(e) {
             const form = this;
             if (!form.checkValidity()) {
@@ -111,7 +107,8 @@
             form.classList.add('was-validated');
         });
 
-        // Focus on first input
+        // Auto focus
         $('#login_field').focus();
     });
 </script>
+<?= $this->endSection() ?>
