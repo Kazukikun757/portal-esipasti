@@ -26,7 +26,7 @@ $routes->group('', ['namespace' => 'App\Controllers'], function ($routes) {
 });
 
 // Admin routes
-$routes->group('admin', function ($routes) {
+$routes->group('admin', ['namespace' => 'App\Controllers', 'filter' => 'auth'], function ($routes) {
     $routes->get('menu', 'Admin\MenuController::index');
     $routes->get('menu/create', 'Admin\MenuController::create');
     $routes->post('menu/store', 'Admin\MenuController::store');

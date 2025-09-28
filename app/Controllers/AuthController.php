@@ -95,4 +95,11 @@ class AuthController extends BaseController
         session()->setFlashdata('success', 'Login berhasil! Selamat datang, ' . $user['full_name']);
         return redirect()->to('/admin/menu');
     }
+
+    public function logout()
+    {
+        $this->session->destroy();
+        session()->setFlashdata('success', 'Anda telah logout');
+        return redirect()->to('/login');
+    }
 }
