@@ -62,7 +62,9 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-
+        .card-body .fa-sign-in-alt {
+            color: #8b5cf6; /* Kode warna ungu */
+        }
         .input-group-text {
             background: #f8f9fa;
             border-right: none;

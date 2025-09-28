@@ -1,12 +1,50 @@
 <?= $this->extend('admin/layout/main') ?>
 
+<?= $this->section('styles') ?>
+<style>
+    /* Ikon ungu */
+    .card-body .fa-user-plus,
+    .input-group-text i,
+    .form-check-label a {
+        color: #8b5cf6;
+    }
+
+    /* Input focus border ungu */
+    .form-control:focus {
+        border-color: #c9a7f4;
+        box-shadow: 0 0 0 0.25rem rgba(201, 167, 244, 0.25);
+    }
+
+    /* Tombol gradien ungu-pink */
+    .btn-primary {
+        background: linear-gradient(90deg, #f8cdda, #a18cd1);
+        border: none;
+        transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(161, 140, 209, 0.4);
+    }
+
+    /* Link warna ungu */
+    a.text-primary {
+        color: #a18cd1 !important;
+    }
+
+    a.text-primary:hover {
+        text-decoration: underline;
+    }
+</style>
+<?= $this->endSection() ?>
+
 <?= $this->section('content') ?>
 <div class="row justify-content-center">
     <div class="col-md-8 col-lg-6">
         <div class="card shadow-sm">
             <div class="card-body p-5">
                 <div class="text-center mb-4">
-                    <i class="fas fa-user-plus fa-3x text-primary mb-3"></i>
+                    <i class="fas fa-user-plus fa-3x mb-3"></i>
                     <h1 class="h3 mb-3 fw-normal">Create Account</h1>
                     <p class="text-muted">Daftarkan akun baru untuk mulai mengorganisir tugas Anda</p>
                 </div>
@@ -280,28 +318,3 @@
     });
 </script>
 <?= $this->endSection() ?>
-class="form-control <?= isset($validation) && $validation->hasError('password') ? 'is-invalid' : '' ?>"
-id="password"
-name="password"
-placeholder="Minimal 6 karakter"
-required>
-<button class="btn btn-outline-secondary" type="button" id="togglePassword">
-    <i class="fas fa-eye"></i>
-</button>
-<?php if (isset($validation) && $validation->hasError('password')): ?>
-    <div class="invalid-feedback">
-        <?= $validation->getError('password') ?>
-    </div>
-<?php endif; ?>
-</div>
-</div>
-</div>
-
-<div class="col-md-6">
-    <div class="mb-3">
-        <label for="password_confirm" class="form-label">Konfirmasi Password</label>
-        <div class="input-group">
-            <span class="input-group-text">
-                <i class="fas fa-lock"></i>
-            </span>
-            <input type="password"
