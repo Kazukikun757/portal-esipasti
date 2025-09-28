@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +9,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-    
+
     <link rel="stylesheet" href="/assets/css/admin_style.css">
 </head>
+
 <body>
     <div class="container-fluid">
         <div class="row">
@@ -20,10 +22,20 @@
                     <ul class="nav flex-column">
                         <li class="nav-item">
                             <a class="nav-link <?= strpos(current_url(), 'admin/menu') !== false ? 'active' : '' ?>" href="/admin/menu">
-                                <i class="fas fa-bars fa-fw me-2"></i> Kelola Menu
+                                Kelola Menu
                             </a>
                         </li>
-                        </ul>
+                        <li class="nav-item">
+                            <a class="nav-link <?= strpos(current_url(), 'admin/add-account') !== false ? 'active' : '' ?>" href="/admin/add-account">
+                                Tambah Akun
+                            </a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link bg-danger <?= strpos(current_url(), 'admin') !== false ? 'active' : '' ?>" href="/logout">
+                                Logout
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
 
@@ -58,4 +70,5 @@
 
     <?= $this->renderSection('scripts') ?>
 </body>
+
 </html>
