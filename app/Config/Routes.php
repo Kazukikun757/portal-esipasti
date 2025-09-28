@@ -14,7 +14,6 @@ $routes->group('', ['namespace' => 'App\Controllers'], function ($routes) {
     $routes->post('login', 'AuthController::doLogin');
 
     // Register routes
-    $routes->get('register', 'AuthController::register');
     $routes->post('register', 'AuthController::doRegister');
 
     // Logout route
@@ -34,4 +33,7 @@ $routes->group('admin', ['namespace' => 'App\Controllers', 'filter' => 'auth'], 
     $routes->post('menu/update/(:num)', 'Admin\MenuController::update/$1');
     $routes->get('menu/delete/(:num)', 'Admin\MenuController::delete/$1');
     $routes->post('menu/update-order', 'Admin\MenuController::updateOrder');
+
+    $routes->get('add-account', 'AuthController::addAccount');
+    $routes->post('add-account', 'AuthController::doAddAccount');
 });

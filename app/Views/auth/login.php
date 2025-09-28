@@ -65,15 +65,6 @@
                     </button>
                 </div>
                 <?= form_close() ?>
-
-                <hr class="my-4">
-
-                <div class="text-center">
-                    <p class="mb-0">
-                        Belum punya akun?
-                        <a href="<?= base_url('register') ?>" class="text-primary fw-semibold">Daftar sekarang</a>
-                    </p>
-                </div>
             </div>
         </div>
     </div>

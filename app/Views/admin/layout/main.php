@@ -22,11 +22,16 @@
                     <ul class="nav flex-column">
                         <li class="nav-item">
                             <a class="nav-link <?= strpos(current_url(), 'admin/menu') !== false ? 'active' : '' ?>" href="/admin/menu">
-                                <i class="fas fa-bars fa-fw me-2"></i> Kelola Menu
+                                Kelola Menu
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link <?= strpos(current_url(), 'admin/add-account') !== false ? 'active' : '' ?>" href="/admin/add-account">
+                                Tambah Akun
                             </a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link bg-danger <?= strpos(current_url(), 'admin/menu') !== false ? 'active' : '' ?>" href="/logout">
+                            <a class="nav-link bg-danger <?= strpos(current_url(), 'admin') !== false ? 'active' : '' ?>" href="/logout">
                                 Logout
                             </a>
                         </li>

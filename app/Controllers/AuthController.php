@@ -96,6 +96,80 @@ class AuthController extends BaseController
         return redirect()->to('/admin/menu');
     }
 
+    public function addAccount()
+    {
+        $data = [
+            'title' => 'Tambah Akun',
+            'validation' => session()->getFlashdata('validation')
+        ];
+
+        return view('admin/menu/add-acount', $data);
+    }
+
+    public function doAddAccount()
+    {
+        $rules = [
+            'username' => 'required|min_length[3]|max_length[50]|is_unique[users.username]',
+            'email' => 'required|valid_email|is_unique[users.email]',
+            'full_name' => 'required|min_length[2]|max_length[100]',
+            'password' => 'required|min_length[6]',
+            'password_confirm' => 'required|matches[password]'
+        ];
+
+        $messages = [
+            'username' => [
+                'required' => 'Username harus diisi',
+                'min_length' => 'Username minimal 3 karakter',
+                'max_length' => 'Username maksimal 50 karakter',
+                'is_unique' => 'Username sudah digunakan'
+            ],
+            'email' => [
+                'required' => 'Email harus diisi',
+                'valid_email' => 'Format email tidak valid',
+                'is_unique' => 'Email sudah digunakan'
+            ],
+            'full_name' => [
+                'required' => 'Nama lengkap harus diisi',
+                'min_length' => 'Nama lengkap minimal 2 karakter',
+                'max_length' => 'Nama lengkap maksimal 100 karakter'
+            ],
+            'password' => [
+                'required' => 'Password harus diisi',
+                'min_length' => 'Password minimal 6 karakter'
+            ],
+            'password_confirm' => [
+                'required' => 'Konfirmasi password harus diisi',
+                'matches' => 'Konfirmasi password tidak sama dengan password'
+            ]
+        ];
+
+        if (!$this->validate($rules, $messages)) {
+            return redirect()->back()->withInput()->with('validation', $this->validator);
+        }
+
+        $data = [
+            'username' => $this->request->getPost('username'),
+            'email' => $this->request->getPost('email'),
+            'full_name' => $this->request->getPost('full_name'),
+            'password' => $this->request->getPost('password')
+        ];
+
+        try {
+            $userId = $this->userModel->insert($data);
+
+            if ($userId) {
+                session()->setFlashdata('success', 'Registrasi berhasil!');
+                return redirect()->to('/admin/menu');
+            } else {
+                session()->setFlashdata('error', 'Registrasi gagal. Silakan coba lagi.');
+                return redirect()->back()->withInput();
+            }
+        } catch (\Exception $e) {
+            session()->setFlashdata('error', 'Terjadi kesalahan: ' . $e->getMessage());
+            return redirect()->back()->withInput();
+        }
+    }
+
     public function logout()
     {
         $this->session->destroy();
