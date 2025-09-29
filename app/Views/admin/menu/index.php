@@ -56,26 +56,14 @@
                                     <a href="/admin/menu/edit/<?= $menu['id'] ?>" class="btn btn-action btn-edit">
                                         <i class="fas fa-edit"></i> Edit
                                     </a>
-                                    <button type="button" class="btn btn-action btn-delete" data-bs-toggle="modal" data-bs-target="#deleteModal<?= $menu['id'] ?>">
+                                    <button type="button"
+                                        class="btn btn-action btn-delete"
+                                        data-id="<?= $menu['id'] ?>"
+                                        data-name="<?= esc($menu['name']) ?>"
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#deleteModal">
                                         <i class="fas fa-trash"></i> Hapus
                                     </button>
-                                    <div class="modal fade" id="deleteModal<?= $menu['id'] ?>" tabindex="-1">
-                                        <div class="modal-dialog modal-dialog-centered">
-                                            <div class="modal-content border-0 rounded-3 shadow-sm">
-                                                <div class="modal-header border-0">
-                                                    <h5 class="modal-title">Konfirmasi Hapus</h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                                </div>
-                                                <div class="modal-body text-muted">
-                                                    Apakah Anda yakin ingin menghapus menu "<strong><?= $menu['name'] ?></strong>"?
-                                                </div>
-                                                <div class="modal-footer border-0">
-                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                                    <a href="/admin/menu/delete/<?= $menu['id'] ?>" class="btn btn-danger">Hapus</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
@@ -86,14 +74,34 @@
     </div>
 </div>
 
+<!-- Modal Hapus (Global, tidak per row) -->
+<div class="modal fade" id="deleteModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 rounded-3 shadow-sm">
+            <div class="modal-header border-0">
+                <h5 class="modal-title">Konfirmasi Hapus</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body text-muted" id="deleteModalBody">
+                Apakah Anda yakin ingin menghapus menu ini?
+            </div>
+            <div class="modal-footer border-0">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                <a href="#" id="confirmDeleteBtn" class="btn btn-danger">Hapus</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 <?= $this->endSection() ?>
 
 <?= $this->section('scripts') ?>
 <script>
     $(function() {
+        // Drag & Drop urutan
         $("#sortable-menu").sortable({
             handle: ".handle",
-            placeholder: "sortable-placeholder", // Anda bisa menambahkan style untuk ini di CSS jika perlu
+            placeholder: "sortable-placeholder",
             update: function(event, ui) {
                 var positions = [];
                 $("#sortable-menu tr").each(function(index) {
@@ -121,6 +129,16 @@
                     }
                 });
             }
+        });
+
+        // Modal hapus dinamis
+        $(document).on("click", ".btn-delete", function() {
+            let id = $(this).data("id");
+            let name = $(this).data("name");
+            $("#deleteModalBody").html(
+                'Apakah Anda yakin ingin menghapus menu "<strong>' + name + '</strong>"?'
+            );
+            $("#confirmDeleteBtn").attr("href", "/admin/menu/delete/" + id);
         });
     });
 </script>

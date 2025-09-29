@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 
     <link rel="stylesheet" href="/assets/css/admin_style.css">
+    <?= $this->renderSection('styles') ?>
 </head>
 
 <body>

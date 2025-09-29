@@ -8,7 +8,7 @@
         <div class="card shadow-lg">
             <div class="card-body p-5">
                 <div class="text-center mb-4">
-                    <i class="fas fa-sign-in-alt fa-3x text-primary mb-3"></i>
+                    <i class="fas fa-sign-in-alt fa-3x mb-3"></i>
                     <h1 class="h3 mb-3 fw-bold">Sign In</h1>
                     <p class="text-muted">Masuk ke akun Anda untuk melanjutkan</p>
                 </div>
