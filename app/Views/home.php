@@ -107,46 +107,16 @@
 
         <div class="aside_info_inner">
 
-            <h6>// Instagram</h6>
+            <h6>MENU</h6>
             <div class="insta-logo">
-                <i class="bi bi-instagram"></i> studio_kimono
+                <i class="bi bi-instagram"></i> PORTAL SIPASTI
             </div>
             <div class="wptb-instagram--gallery">
                 <div class="wptb-item--inner d-flex align-items-center justify-content-center flex-wrap">
                     <div class="wptb-item">
-                        <div class="wptb-item--image">
-                            <img src="../assets/img/instagram/6.jpg" alt="img">
-                        </div>
-                    </div>
-
-                    <div class="wptb-item">
-                        <div class="wptb-item--image">
-                            <img src="../assets/img/instagram/7.jpg" alt="img">
-                        </div>
-                    </div>
-
-                    <div class="wptb-item">
-                        <div class="wptb-item--image">
-                            <img src="../assets/img/instagram/8.jpg" alt="img">
-                        </div>
-                    </div>
-
-                    <div class="wptb-item">
-                        <div class="wptb-item--image">
-                            <img src="../assets/img/instagram/9.jpg" alt="img">
-                        </div>
-                    </div>
-
-                    <div class="wptb-item">
-                        <div class="wptb-item--image">
-                            <img src="../assets/img/instagram/10.jpg" alt="img">
-                        </div>
-                    </div>
-
-                    <div class="wptb-item">
-                        <div class="wptb-item--image">
-                            <img src="../assets/img/instagram/11.jpg" alt="img">
-                        </div>
+                        <a href="/index.php/admin/menu" class="btn btn-admin-custom">
+                            ADMIN
+                        </a>
                     </div>
                 </div>
             </div>
@@ -229,21 +199,21 @@
                                 <div class="container">
                                     <div class="menu-grid">
                                         <?php if (isset($menus) && !empty($menus)): ?>
-                                            <?php foreach ($menus as $menu): ?>
-                                                <a href="<?= $menu['link'] ?>" class="menu-item">
-                                                    <div class="menu-icon"><img
-                                                            src="<?= $menu['icon'] ?>?v=<?= $cache_buster ?>"
-                                                            alt="<?= $menu['name'] ?>"></div>
-                                                    <div class="menu-text"><?= $menu['name'] ?></div>
-                                                </a>
-                                            <?php endforeach; ?>
+                                        <?php foreach ($menus as $menu): ?>
+                                        <a href="<?= $menu['link'] ?>" class="menu-item">
+                                            <div class="menu-icon"><img
+                                                    src="<?= $menu['icon'] ?>?v=<?= $cache_buster ?>"
+                                                    alt="<?= $menu['name'] ?>"></div>
+                                            <div class="menu-text"><?= $menu['name'] ?></div>
+                                        </a>
+                                        <?php endforeach; ?>
                                         <?php else: ?>
-                                            <!-- Fallback jika tidak ada menu -->
-                                            <a href="#" class="menu-item">
-                                                <div class="menu-icon"><img src="../assets/img/icons/default.svg" alt="">
-                                                </div>
-                                                <div class="menu-text">Menu Tidak Tersedia</div>
-                                            </a>
+                                        <!-- Fallback jika tidak ada menu -->
+                                        <a href="#" class="menu-item">
+                                            <div class="menu-icon"><img src="../assets/img/icons/default.svg" alt="">
+                                            </div>
+                                            <div class="menu-text">Menu Tidak Tersedia</div>
+                                        </a>
                                         <?php endif; ?>
                                     </div>
                                     <div class="">
@@ -348,15 +318,15 @@
             </div>
         </div>
 
-        <!-- About SIPASTI -->
-        <section class="container">
+        <section id="about-sipasti" class="container">
             <div class="container">
                 <div class="wptb-heading">
                     <div class="wptb-item--inner text-center">
                         <h6 class="wptb-item--subtitle"><span>//</span> Tentang SiPasti</h6>
                         <h1 class="wptb-item--title">Sistem Informasi<span> </br> Pengawasan dan Tindak Lanjut</span>
                         </h1>
-                        <p class="wptb-about--text-one mb-4 w-75 mx-auto fs-20">Merupakan Sistem Informasi yang menunjang kinerja
+                        <p class="wptb-about--text-one mb-4 w-75 mx-auto fs-20">Merupakan Sistem Informasi yang
+                            menunjang kinerja
                             pengawasan yang dilakukan oleh Para Auditor Inspektorat, serta merupakan sebuah sistem
                             tindak lanjut bagi OPD yang menjadi sasaran pengawasan/pemeriksaan.</p>
                     </div>
@@ -398,12 +368,12 @@
 
 
     <script>
-        document.addEventListener("mousemove", function(e) {
-            const pattern = document.querySelector(".pattern-layer");
-            const x = (e.clientX / window.innerWidth) * 30;
-            const y = (e.clientY / window.innerHeight) * 30;
-            pattern.style.backgroundPosition = `${x}px ${y}px`;
-        });
+    document.addEventListener("mousemove", function(e) {
+        const pattern = document.querySelector(".pattern-layer");
+        const x = (e.clientX / window.innerWidth) * 30;
+        const y = (e.clientY / window.innerHeight) * 30;
+        pattern.style.backgroundPosition = `${x}px ${y}px`;
+    });
     </script>
 
 
