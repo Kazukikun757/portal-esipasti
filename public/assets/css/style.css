@@ -1932,7 +1932,7 @@ body {
     height: 500px;
     background: radial-gradient( circle at center, rgba(255, 192, 203, 0.45), rgba(186, 104, 200, 0.35));
     border-radius: 50%;
-    top: -150px;
+    bottom: -150px;
     right: -150px;
     filter: blur(80px);
     z-index: 0;
@@ -2023,8 +2023,8 @@ body {
 }
 
 #about-sipasti {
-    padding-bottom: 75px;
-    padding-top: 60px;
+    padding-bottom: 100px;
+    padding-top: 125px;
 }
 
 .btn-admin-custom {

@@ -148,17 +148,6 @@
                     </div>
                 </div>
             </div>
-
-            <h6>// Follow Us</h6>
-            <div class="social-box style-square">
-                <ul>
-                    <li><a href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a></li>
-                    <li><a href="https://www.instagram.com/"><i class="bi bi-instagram"></i></a></li>
-                    <li><a href="https://www.linkedin.com/"><i class="bi bi-linkedin"></i></a></li>
-                    <li><a href="https://www.behance.com/"><i class="bi bi-behance"></i></a></li>
-                    <li><a href="https://www.youtube.com/"><i class="bi bi-youtube"></i></a></li>
-                </ul>
-            </div>
         </div>
     </div>
 
@@ -186,6 +175,17 @@
     <main class="wrapper">
         <!-- Slider Section -->
         <section class="wptb-slider style1">
+            <div class="menu-wrapper d-flex justify-content-end me-5">
+                <div class="justify-content-center justify-content-xl-between">
+                    <div class="aside_open d-none d-xl-flex">
+                        <div class="aside-open--inner">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="pattern-layer"></div>
             <div class="swiper-container wptb-swiper-slider-one">
                 <!-- swiper slides -->
@@ -234,15 +234,7 @@
             </div>
 
             <!-- Left Pane -->
-            <div class="ml-5 justify-content-center justify-content-xl-between">
-                <div class="aside_open d-none d-xl-flex">
-                    <div class="aside-open--inner">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-            </div>
+
         </section>
 
         <!-- Text Marquee -->

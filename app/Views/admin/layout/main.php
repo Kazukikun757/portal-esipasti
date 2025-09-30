@@ -22,17 +22,25 @@
                     <a href="/admin" class="sidebar-brand">MENU ADMIN SIPASTI</a>
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link <?= strpos(current_url(), 'admin/menu') !== false ? 'active' : '' ?>" href="/admin/menu">
+                            <a class="nav-link" href="/">
+                                Beranda
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link <?= strpos(current_url(), 'admin/menu') !== false ? 'active' : '' ?>"
+                                href="/admin/menu">
                                 Kelola Menu
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link <?= strpos(current_url(), 'admin/add-account') !== false ? 'active' : '' ?>" href="/admin/add-account">
+                            <a class="nav-link <?= strpos(current_url(), 'admin/add-account') !== false ? 'active' : '' ?>"
+                                href="/admin/add-account">
                                 Tambah Akun
                             </a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link bg-danger <?= strpos(current_url(), 'admin') !== false ? 'active' : '' ?>" href="/logout">
+                            <a class="nav-link bg-danger <?= strpos(current_url(), 'admin') !== false ? 'active' : '' ?>"
+                                href="/logout">
                                 Logout
                             </a>
                         </li>
@@ -47,16 +55,16 @@
 
                 <div class="content-wrapper">
                     <?php if (session()->has('message')): ?>
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            <?= session('message') ?>
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <?= session('message') ?>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
                     <?php endif; ?>
                     <?php if (session()->has('error')): ?>
-                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                            <?= session('error') ?>
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <?= session('error') ?>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
                     <?php endif; ?>
 
                     <?= $this->renderSection('content') ?>
