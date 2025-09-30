@@ -148,17 +148,6 @@
                     </div>
                 </div>
             </div>
-
-            <h6>// Follow Us</h6>
-            <div class="social-box style-square">
-                <ul>
-                    <li><a href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a></li>
-                    <li><a href="https://www.instagram.com/"><i class="bi bi-instagram"></i></a></li>
-                    <li><a href="https://www.linkedin.com/"><i class="bi bi-linkedin"></i></a></li>
-                    <li><a href="https://www.behance.com/"><i class="bi bi-behance"></i></a></li>
-                    <li><a href="https://www.youtube.com/"><i class="bi bi-youtube"></i></a></li>
-                </ul>
-            </div>
         </div>
     </div>
 
