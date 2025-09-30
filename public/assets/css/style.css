@@ -2046,3 +2046,104 @@ body {
     transform: translateY(-3px);
     box-shadow: 0 7px 20px rgba(216, 180, 254, 0.6);
 }
+
+        /* Background full screen dengan gradient & spotlight */
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .page-wrapper {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(135deg,
+                    #a18cd1 0%,
+                    #f8cdda 40%,
+                    #ffffff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-wrapper::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 25% 35%,
+                    rgba(255, 200, 255, 0.25), transparent 70%);
+            pointer-events: none;
+        }
+
+        .page-wrapper::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 70% 65%,
+                    rgba(160, 120, 255, 0.25), transparent 70%);
+            pointer-events: none;
+        }
+
+        .card {
+            border: none;
+            border-radius: 16px;
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-body h1 {
+            font-weight: 700;
+            background: linear-gradient(90deg, #fbd1e1, #c9b5f9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .card-body .fa-sign-in-alt {
+            color: #8b5cf6;
+            /* Kode warna ungu */
+        }
+
+        .input-group-text {
+            background: #f8f9fa;
+            border-right: none;
+        }
+
+        .form-control {
+            border-left: none;
+        }
+
+        .form-control:focus {
+            border-color: #c9a7f4;
+            box-shadow: 0 0 0 0.25rem rgba(201, 167, 244, 0.25);
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, #f8cdda, #a18cd1);
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(161, 140, 209, 0.4);
+        }
+
+        a.text-primary {
+            color: #a18cd1 !important;
+        }
+
+        a.text-primary:hover {
+            text-decoration: underline;
+        }
+
+        .pattern-layer {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle,
+                    rgba(186, 104, 200, 0.25) 1.5px,
+                    transparent 1.5px);
+            background-size: 30px 30px;
+            z-index: 0;
+            transition: background-position 0.15s ease-out;
+            pointer-events: none;
+        }

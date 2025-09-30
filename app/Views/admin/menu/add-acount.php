@@ -1,41 +1,7 @@
 <?= $this->extend('admin/layout/main') ?>
 
 <?= $this->section('styles') ?>
-<style>
-    /* Ikon ungu */
-    .card-body .fa-user-plus,
-    .input-group-text i,
-    .form-check-label a {
-        color: #8b5cf6;
-    }
 
-    /* Input focus border ungu */
-    .form-control:focus {
-        border-color: #c9a7f4;
-        box-shadow: 0 0 0 0.25rem rgba(201, 167, 244, 0.25);
-    }
-
-    /* Tombol gradien ungu-pink */
-    .btn-primary {
-        background: linear-gradient(90deg, #f8cdda, #a18cd1);
-        border: none;
-        transition: all 0.3s ease;
-    }
-
-    .btn-primary:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(161, 140, 209, 0.4);
-    }
-
-    /* Link warna ungu */
-    a.text-primary {
-        color: #a18cd1 !important;
-    }
-
-    a.text-primary:hover {
-        text-decoration: underline;
-    }
-</style>
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
