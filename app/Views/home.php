@@ -186,6 +186,17 @@
     <main class="wrapper">
         <!-- Slider Section -->
         <section class="wptb-slider style1">
+            <div class="menu-wrapper d-flex justify-content-end me-5">
+                <div class="justify-content-center justify-content-xl-between">
+                    <div class="aside_open d-none d-xl-flex">
+                        <div class="aside-open--inner">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="pattern-layer"></div>
             <div class="swiper-container wptb-swiper-slider-one">
                 <!-- swiper slides -->
@@ -234,15 +245,7 @@
             </div>
 
             <!-- Left Pane -->
-            <div class="ml-5 justify-content-center justify-content-xl-between">
-                <div class="aside_open d-none d-xl-flex">
-                    <div class="aside-open--inner">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-            </div>
+
         </section>
 
         <!-- Text Marquee -->

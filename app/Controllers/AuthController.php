@@ -174,6 +174,6 @@ class AuthController extends BaseController
     {
         $this->session->destroy();
         session()->setFlashdata('success', 'Anda telah logout');
-        return redirect()->to('/login');
+        return redirect()->to('/');
     }
 }
