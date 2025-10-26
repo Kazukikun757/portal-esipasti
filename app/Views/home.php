@@ -199,21 +199,21 @@
                                 <div class="container">
                                     <div class="menu-grid">
                                         <?php if (isset($menus) && !empty($menus)): ?>
-                                        <?php foreach ($menus as $menu): ?>
-                                        <a href="<?= $menu['link'] ?>" class="menu-item">
-                                            <div class="menu-icon"><img
-                                                    src="<?= $menu['icon'] ?>?v=<?= $cache_buster ?>"
-                                                    alt="<?= $menu['name'] ?>"></div>
-                                            <div class="menu-text"><?= $menu['name'] ?></div>
-                                        </a>
-                                        <?php endforeach; ?>
+                                            <?php foreach ($menus as $menu): ?>
+                                                <a href="<?= $menu['link'] ?>" class="menu-item">
+                                                    <div class="menu-icon"><img
+                                                            src="<?= $menu['icon'] ?>?v=<?= $cache_buster ?>"
+                                                            alt="<?= $menu['name'] ?>"></div>
+                                                    <div class="menu-text"><?= $menu['name'] ?></div>
+                                                </a>
+                                            <?php endforeach; ?>
                                         <?php else: ?>
-                                        <!-- Fallback jika tidak ada menu -->
-                                        <a href="#" class="menu-item">
-                                            <div class="menu-icon"><img src="../assets/img/icons/default.svg" alt="">
-                                            </div>
-                                            <div class="menu-text">Menu Tidak Tersedia</div>
-                                        </a>
+                                            <!-- Fallback jika tidak ada menu -->
+                                            <a href="#" class="menu-item">
+                                                <div class="menu-icon"><img src="../assets/img/icons/default.svg" alt="">
+                                                </div>
+                                                <div class="menu-text">Menu Tidak Tersedia</div>
+                                            </a>
                                         <?php endif; ?>
                                     </div>
                                     <div class="">
@@ -236,79 +236,6 @@
             <!-- Left Pane -->
 
         </section>
-
-        <!-- Text Marquee -->
-        <div class="wptb-marquee mt-5 mb-0 pb-0">
-            <div class="wptb-text-marquee1 wptb-slide-to-left">
-                <div class="wptb-item--container">
-                    <div class="wptb-item--inner">
-                        <h4 class="wptb-item--text">
-                            <span class="wptb-text-backdrop">Portal</span>
-                            <span class="wptb-item-layer both-version position-relative">
-                                <img src="../assets/img/more/star-dark.png" alt="img">
-                            </span>
-                        </h4>
-                        <h4 class="wptb-item--text text-outline">
-                            <span class="wptb-text-backdrop">Sipasti</span>
-                            <span class="wptb-item-layer both-version position-relative">
-                                <img src="../assets/img/more/star-dark.png" alt="img">
-                            </span>
-                        </h4>
-                        <h4 class="wptb-item--text">
-                            <span class="wptb-text-backdrop">Portal</span>
-                            <span class="wptb-item-layer both-version position-relative">
-                                <img src="../assets/img/more/star-dark.png" alt="img">
-                            </span>
-                        </h4>
-                        <h4 class="wptb-item--text text-outline">
-                            <span class="wptb-text-backdrop">Sipasti</span>
-                            <span class="wptb-item-layer both-version position-relative">
-                                <img src="../assets/img/more/star-dark.png" alt="img">
-                            </span>
-                        </h4>
-                        <h4 class="wptb-item--text">
-                            <span class="wptb-text-backdrop">Portal</span>
-                            <span class="wptb-item-layer both-version position-relative">
-                                <img src="../assets/img/more/star-dark.png" alt="img">
-                            </span>
-                        </h4>
-                    </div>
-
-                    <div class="wptb-item--inner">
-                        <h4 class="wptb-item--text text-outline">
-                            <span class="wptb-text-backdrop">Sipasti</span>
-                            <span class="wptb-item-layer both-version position-relative">
-                                <img src="../assets/img/more/star-dark.png" alt="img">
-                            </span>
-                        </h4>
-                        <h4 class="wptb-item--text">
-                            <span class="wptb-text-backdrop">Portal</span>
-                            <span class="wptb-item-layer both-version position-relative">
-                                <img src="../assets/img/more/star-dark.png" alt="img">
-                            </span>
-                        </h4>
-                        <h4 class="wptb-item--text text-outline">
-                            <span class="wptb-text-backdrop">Sipasti</span>
-                            <span class="wptb-item-layer both-version position-relative">
-                                <img src="../assets/img/more/star-dark.png" alt="img">
-                            </span>
-                        </h4>
-                        <h4 class="wptb-item--text">
-                            <span class="wptb-text-backdrop">Portal</span>
-                            <span class="wptb-item-layer both-version position-relative">
-                                <img src="../assets/img/more/star-dark.png" alt="img">
-                            </span>
-                        </h4>
-                        <h4 class="wptb-item--text text-outline">
-                            <span class="wptb-text-backdrop">Sipasti</span>
-                            <span class="wptb-item-layer both-version position-relative">
-                                <img src="../assets/img/more/star-dark.png" alt="img">
-                            </span>
-                        </h4>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <section id="about-sipasti" class="container">
             <div class="container">
@@ -360,12 +287,12 @@
 
 
     <script>
-    document.addEventListener("mousemove", function(e) {
-        const pattern = document.querySelector(".pattern-layer");
-        const x = (e.clientX / window.innerWidth) * 30;
-        const y = (e.clientY / window.innerHeight) * 30;
-        pattern.style.backgroundPosition = `${x}px ${y}px`;
-    });
+        document.addEventListener("mousemove", function(e) {
+            const pattern = document.querySelector(".pattern-layer");
+            const x = (e.clientX / window.innerWidth) * 30;
+            const y = (e.clientY / window.innerHeight) * 30;
+            pattern.style.backgroundPosition = `${x}px ${y}px`;
+        });
     </script>
 
 

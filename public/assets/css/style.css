@@ -1923,20 +1923,7 @@ body {
 }
 
 
-/* Blob Aksen */
 
-.wptb-slider.style1::after {
-    content: "";
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient( circle at center, rgba(255, 192, 203, 0.45), rgba(186, 104, 200, 0.35));
-    border-radius: 50%;
-    bottom: -150px;
-    right: -150px;
-    filter: blur(80px);
-    z-index: 0;
-}
 
 
 /* Judul */
@@ -2147,3 +2134,154 @@ body {
             transition: background-position 0.15s ease-out;
             pointer-events: none;
         }
+
+        /* === PALET WARNA UNGU-PINK BOLD === */
+:root {
+    --warna-ungu: #9333EA;
+    /* Ungu Bold */
+    --warna-pink: #DA007C;
+    /* Pink/Magenta Bold */
+    --warna-gradien: linear-gradient(90deg, var(--warna-pink), var(--warna-ungu));
+    --warna-teks-terang: #FFFFFF;
+    --warna-teks-gelap: #333333;
+}
+
+/* --- JUDUL & SUB-JUDUL --- */
+/* Judul sidebar 'Menu', 'Contact Us', dll. */
+h6 {
+    color: var(--warna-pink);
+}
+/* Teks '//' di subtitle */
+.wptb-heading .wptb-item--subtitle span {
+    color: var(--warna-pink);
+}
+
+/* --- HERO SECTION (SLIDER) --- */
+.wptb-slider.style1 {
+    background: radial-gradient(135deg,
+            var(--warna-ungu) 0%,
+            var(--warna-pink) 40%,
+            #ffffff 100%);
+}
+
+/* Efek blob di pojok */
+
+
+/* Pola titik-titik */
+.pattern-layer {
+    background-image: radial-gradient(circle,
+            rgba(147, 51, 234, 0.25) 1.5px,
+            /* Titik-titik Ungu */
+            transparent 1.5px);
+}
+
+/* --- TEKS GRADASI & OUTLINE --- */
+.wptb-heading .wptb-item--title span {
+    background: var(--warna-gradien);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+
+.wptb-heading .text-outline {
+    -webkit-text-stroke: 1px rgba(147, 51, 234, 0.35); /* Outline Ungu */
+}
+
+/* Tombol menu 'hamburger' */
+.aside-open--inner span {
+    background: var(--warna-gradien);
+}
+
+/* --- TOMBOL & IKON --- */
+.btn-admin-custom {
+    background: var(--warna-gradien);
+    color: var(--warna-teks-terang) !important; /* Tambahkan !important jika perlu */
+    box-shadow: 0 4px 15px rgba(147, 51, 234, 0.4);
+}
+.btn-admin-custom:hover {
+    color: var(--warna-teks-terang) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(218, 0, 124, 0.6);
+}
+
+/* Ikon di sidebar (amplop, lokasi) */
+.wptb-icon-box1.style2 .wptb-item--icon i {
+    color: var(--warna-ungu);
+}
+
+/* Ikon instagram di sidebar */
+.aside_info_inner .insta-logo i {
+    color: var(--warna-pink);
+}
+
+/* Teks menu (menu-text) */
+.menu-text {
+    color: var(--warna-teks-gelap);
+    font-weight: 600; /* Sedikit lebih tebal */
+}
+.menu-item:hover .menu-text {
+     color: var(--warna-pink); /* Ganti warna saat hover */
+}
+
+
+/* --- FOOTER & TOMBOL NAIK --- */
+.footer.style1 .copyright a {
+    color: var(--warna-pink);
+}
+.footer.style1 .copyright a:hover {
+    color: var(--warna-ungu);
+}
+
+.footer.style1 .social-box.style-oval ul li a {
+    background: var(--warna-gradien);
+    color: var(--warna-teks-terang);
+}
+.footer.style1 .social-box.style-oval ul li a:hover {
+    background: var(--warna-teks-terang);
+    color: var(--warna-pink);
+}
+
+.totop a {
+    background: var(--warna-ungu);
+    color: var(--warna-teks-terang);
+}
+.totop a:hover {
+    background: var(--warna-pink);
+}
+
+/* --- TEMA LOGIN (JIKA ADA) --- */
+/* Ini akan mewarnai halaman lain seperti login jika mereka menggunakan kelas ini */
+.page-wrapper {
+    background: radial-gradient(135deg,
+            var(--warna-ungu) 0%,
+            var(--warna-pink) 40%,
+            #ffffff 100%);
+}
+.page-wrapper::before {
+    background: radial-gradient(circle at 25% 35%,
+            rgba(218, 0, 124, 0.25), transparent 70%);
+}
+.page-wrapper::after {
+    background: radial-gradient(circle at 70% 65%,
+            rgba(147, 51, 234, 0.25), transparent 70%);
+}
+.card-body h1 {
+    background: var(--warna-gradien);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.form-control:focus {
+    border-color: var(--warna-ungu);
+    box-shadow: 0 0 0 0.25rem rgba(147, 51, 234, 0.25);
+}
+.btn-primary {
+    background: var(--warna-gradien);
+    border: none;
+}
+.btn-primary:hover {
+    box-shadow: 0 4px 12px rgba(147, 51, 234, 0.4);
+}
+a.text-primary {
+    color: var(--warna-ungu) !important;
+}
+
