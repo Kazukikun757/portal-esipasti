@@ -24,6 +24,56 @@
 
     <!-- Styles Include -->
     <link rel="stylesheet" href="../assets/css/main.css">
+    
+    <!-- Additional Mobile Responsive Styles -->
+    <style>
+        @media screen and (max-width: 991px) {
+            .menu-grid {
+                position: absolute;
+                top: 40%;
+            }
+        }
+        
+        @media screen and (max-width: 767px) {
+            .menu-grid {
+                position: absolute;
+                top: 35%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            
+            .container {
+                padding-left: 15px !important;
+                padding-right: 15px !important;
+            }
+        }
+        
+        @media screen and (max-width: 575px) {
+            .menu-grid {
+                top: 30%;
+            }
+        }
+        
+        @media screen and (max-width: 450px) {
+            .menu-grid {
+                top: 25%;
+            }
+        }
+        
+        .menu-text {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+        }
+        
+        /* Ensure container doesn't overflow on mobile */
+        @media screen and (max-width: 767px) {
+            .wptb-heading .wptb-item--title {
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+            }
+        }
+    </style>
 
 </head>
 
@@ -244,8 +294,7 @@
                         <h6 class="wptb-item--subtitle"><span>//</span> Tentang SiPasti</h6>
                         <h1 class="wptb-item--title">Sistem Informasi<span> </br> Pengawasan dan Tindak Lanjut</span>
                         </h1>
-                        <p class="wptb-about--text-one mb-4 w-75 mx-auto fs-20">Merupakan Sistem Informasi yang
-                            menunjang kinerja
+                        <p class="wptb-about--text-one mb-4 w-100 w-lg-75 mx-auto fs-20">Merupakan Sistem Informasi yang menunjang kinerja
                             pengawasan yang dilakukan oleh Para Auditor Inspektorat, serta merupakan sebuah sistem
                             tindak lanjut bagi OPD yang menjadi sasaran pengawasan/pemeriksaan.</p>
                     </div>
