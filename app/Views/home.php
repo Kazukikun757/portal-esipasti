@@ -230,6 +230,35 @@
             animation: float 20s ease-in-out infinite;
         }
 
+        /* Grid Pattern */
+        .hero-background::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 60px 60px;
+            opacity: 0.4;
+        }
+
+        /* Additional Glow Effect */
+        .hero-background::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, rgba(184, 149, 255, 0.2) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        /* Animated Lines */
+
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-20px); }
@@ -335,8 +364,8 @@
         }
 
         .floating-left {
-            top: 20%;
-            right: 5%;
+            bottom: 20%;
+            left: 5%;
             animation-delay: 0s;
         }
 
@@ -444,6 +473,16 @@
             border-color: #c084fc !important;
             color: white !important;
             transform: translateY(-3px);
+        }
+
+        .pattern-layer {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient( circle, rgba(186, 104, 200, 0.25) 1.5px, transparent 1.5px);
+            background-size: 30px 30px;
+            z-index: 0;
+            transition: background-position 0.15s ease-out;
+            pointer-events: none;
         }
 
         /* Responsive */
@@ -587,7 +626,6 @@
                         <li><a href="#" class="nav-link">Home</a></li>
                         <li><a href="#features" class="nav-link">Fitur</a></li>
                         <li><a href="#about" class="nav-link">Tentang</a></li>
-                        <li><a href="#faq" class="nav-link">FAQ</a></li>
                     </ul>
                     <?php if (!session()->has('user_id')): ?>
                     <a href="/login" class="btn-login">
@@ -618,7 +656,7 @@
             <button class="mobile-menu-close" id="mobileMenuClose">
                 <i class="fas fa-times"></i>
             </button>
-        </div>
+                    </div>
         <ul class="mobile-nav">
             <li><a href="#" class="nav-link">Home</a></li>
             <li><a href="#features" class="nav-link">Fitur</a></li>
@@ -636,18 +674,34 @@
                 <?php endif; ?>
             </li>
         </ul>
-    </div>
+            </div>
 
     <!-- Hero Section -->
     <section class="hero-section">
+        <div class="pattern-layer"></div>
         <div class="hero-background"></div>
+        
+        <!-- Animated Lines -->
+        <div class="animated-lines">
+            <div class="line line-1"></div>
+            <div class="line line-2"></div>
+            <div class="line line-3"></div>
+            <div class="line line-4"></div>
+                    </div>
         
         <!-- Floating Elements -->
         <div class="floating-element floating-left d-none d-lg-block">
             <div class="text-center">
-                <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📊</div>
-                <div style="font-weight: 700; font-size: 1.2rem;">Portal</div>
-                <div style="font-size: 0.9rem; color: rgba(255,255,255,0.7);">SIPASTI</div>
+            <i style="font-size: 2.5rem; margin-bottom: 0.5rem;" class="fa-solid fa-book"></i>
+                <div style="font-weight: 700; font-size: 1.2rem;">Pengawasan</div>
+                <!-- <div style="font-size: 0.9rem; color: rgba(255,255,255,0.7);">SIPASTI</div> -->
+            </div>
+        </div>
+        <div class="floating-element floating-right d-none d-lg-block">
+            <div class="text-center">
+            <i style="font-size: 2.5rem; margin-bottom: 0.5rem;" class="fa-solid fa-shield-halved"></i>
+                <div style="font-weight: 700; font-size: 1.2rem;">Tindak Lanjut</div>
+                <!-- <div style="font-size: 0.9rem; color: rgba(255,255,255,0.7);">SIPASTI</div> -->
             </div>
         </div>
 
@@ -677,27 +731,27 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">
-                    <span class="section-title-highlight">Fitur Unggulan</span>
+                    <span class="section-title-highlight">Fitur Utama</span>
                 </h2>
                 <p class="section-subtitle">
                     Solusi lengkap untuk pengawasan dan akuntabilitas
                 </p>
             </div>
-
+                        
             <div class="feature-grid">
-                <?php if (isset($menus) && !empty($menus)): ?>
-                    <?php foreach ($menus as $menu): ?>
+                        <?php if (isset($menus) && !empty($menus)): ?>
+                            <?php foreach ($menus as $menu): ?>
                         <a href="<?= $menu['link'] ?>" class="feature-card">
                             <div class="feature-icon">
                                 <img src="<?= $menu['icon'] ?>?v=<?= $cache_buster ?? time() ?>" alt="<?= $menu['name'] ?>">
-                            </div>
+                                    </div>
                             <h3 class="feature-title"><?= $menu['name'] ?></h3>
                             <p class="feature-description">
                                 Klik untuk mengakses layanan <?= strtolower($menu['name']) ?>
                             </p>
-                        </a>
-                    <?php endforeach; ?>
-                <?php else: ?>
+                                </a>
+                            <?php endforeach; ?>
+                        <?php else: ?>
                     <!-- Default Features -->
                     <a href="#" class="feature-card">
                         <div class="feature-icon">
@@ -747,16 +801,16 @@
                     <a href="#" class="feature-card">
                         <div class="feature-icon">
                             <i class="fas fa-book" style="font-size: 2.5rem; color: #c084fc;"></i>
-                        </div>
+                                </div>
                         <h3 class="feature-title">Perpustakaan Digital</h3>
                         <p class="feature-description">
                             Akses dokumen dan referensi yang komprehensif
                         </p>
-                    </a>
-                <?php endif; ?>
+                            </a>
+                        <?php endif; ?>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
     <!-- About Section -->
     <section id="about" style="padding: 6rem 2rem; background: rgba(139, 92, 246, 0.05);">
@@ -771,20 +825,20 @@
                 <p style="font-size: 1.25rem; max-width: 800px; margin: 0 auto; line-height: 1.8;">
                     Merupakan Sistem Informasi yang menunjang kinerja pengawasan yang dilakukan oleh Para Auditor Inspektorat, serta merupakan sebuah sistem tindak lanjut bagi OPD yang menjadi sasaran pengawasan/pemeriksaan.
                 </p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
     <!-- Footer -->
     <footer style="background: rgba(26, 11, 46, 0.9); border-top: 1px solid rgba(139, 92, 246, 0.2); padding: 2rem 0;">
-        <div class="container">
+            <div class="container">
             <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 2rem;">
                 <div>
                     <p style="margin: 0; color: rgba(255, 255, 255, 0.7);">
                         <a href="#" style="color: #c084fc; text-decoration: none; font-weight: 700;">SIPASTI</a> - 
                         Sistem Informasi Pengawasan dan Tindak Lanjut
                     </p>
-                </div>
+                    </div>
                 <div style="display: flex; gap: 1rem;">
                     <a href="https://www.facebook.com/" style="width: 40px; height: 40px; border-radius: 50%; background: rgba(139, 92, 246, 0.2); border: 1px solid rgba(139, 92, 246, 0.3); display: flex; align-items: center; justify-content: center; color: #c084fc; text-decoration: none; transition: all 0.3s;">
                         <i class="fab fa-facebook-f"></i>
@@ -810,7 +864,7 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
+
     <script>
         // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
@@ -905,6 +959,16 @@
                 this.style.color = '#c084fc';
                 this.style.transform = 'translateY(0)';
             });
+        });
+    </script>
+
+    <!-- Pattern Layer -->
+    <script>
+        document.addEventListener("mousemove", function(e) {
+            const pattern = document.querySelector(".pattern-layer");
+            const x = (e.clientX / window.innerWidth) * 30;
+            const y = (e.clientY / window.innerHeight) * 30;
+            pattern.style.backgroundPosition = `${x}px ${y}px`;
         });
     </script>
 </body>
