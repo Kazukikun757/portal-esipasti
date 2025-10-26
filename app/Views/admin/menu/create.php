@@ -36,7 +36,7 @@
 
             <div class="row">
                 <!-- Form kiri -->
-                <div class="col-md-6">
+                <div class="col-lg-6">
                     <div class="mb-3">
                         <label for="name" class="form-label fw-semibold">Nama Menu</label>
                         <input type="text"
@@ -70,7 +70,7 @@
                 </div>
 
                 <!-- Preview kanan -->
-                <div class="col-md-6">
+                <div class="col-lg-6 mb-3 mb-lg-0">
                     <div class="card border-0 shadow-sm rounded-3">
                         <div class="card-header bg-white border-0">
                             <span class="fw-semibold">Preview</span>
@@ -91,7 +91,7 @@
             </div>
 
             <!-- Tombol -->
-            <div class="mt-4">
+            <div class="mt-4 d-flex flex-column flex-sm-row gap-2">
                 <button type="submit" class="btn btn-primary rounded-pill px-4">Simpan</button>
                 <a href="/admin/menu" class="btn btn-outline-secondary rounded-pill px-4">Batal</a>
             </div>

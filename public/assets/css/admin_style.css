@@ -24,6 +24,35 @@ body {
     color: var(--text-color);
 }
 
+/* Mobile Menu Toggle Button */
+.btn-mobile-toggle {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1050;
+    background: var(--primary-accent);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-mobile-toggle:hover {
+    background: #7c3aed;
+    color: white;
+}
+
+.sidebar-close {
+    color: var(--text-color) !important;
+    text-decoration: none !important;
+    padding: 0.25rem;
+}
+
+.sidebar-close:hover {
+    color: var(--primary-accent) !important;
+}
+
 /* Sidebar */
 .sidebar {
     min-height: 100vh;
@@ -254,3 +283,197 @@ body {
     a.text-primary:hover {
         text-decoration: underline;
     }
+
+/* ===== RESPONSIVE STYLES ===== */
+
+/* Mobile and Tablet Responsive Styles */
+@media (max-width: 991.98px) {
+    /* Sidebar Overlay on Mobile */
+    .sidebar {
+        position: fixed !important;
+        top: 0;
+        left: -100%;
+        width: 280px;
+        z-index: 1040;
+        transition: left 0.3s ease;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar.show {
+        left: 0;
+    }
+
+    /* Main content full width on mobile */
+    main {
+        width: 100%;
+        margin-left: 0 !important;
+    }
+
+    /* Top navbar mobile spacing */
+    .top-navbar {
+        padding: 1rem;
+        margin-left: 0;
+        margin-right: 0;
+        position: sticky;
+        top: 0;
+        z-index: 1030;
+    }
+
+    .top-navbar .page-title {
+        font-size: 1.5rem;
+    }
+
+    /* Content wrapper mobile spacing */
+    .content-wrapper {
+        padding: 1rem;
+    }
+
+    /* Card responsive padding */
+    .card-body {
+        padding: 1rem;
+    }
+
+    /* Table responsive - hide less important columns on mobile */
+    .table-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Make table scrollable horizontally on mobile */
+    .table {
+        font-size: 0.875rem;
+    }
+
+    .table th,
+    .table td {
+        padding: 0.75rem 0.5rem;
+        white-space: nowrap;
+    }
+
+    /* Icon cell smaller on mobile */
+    .icon-cell-preview {
+        width: 35px;
+        height: 35px;
+    }
+
+    /* Button adjustments for mobile */
+    .btn-action {
+        font-size: 0.75rem;
+        padding: 4px 8px;
+        margin-bottom: 0.25rem;
+    }
+
+    /* Stack table actions on mobile */
+    .table tbody td:last-child {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    /* Form responsive */
+    .form-control {
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+
+    /* Modal responsive */
+    .modal-dialog {
+        margin: 1rem;
+    }
+
+    /* Alert responsive */
+    .alert {
+        font-size: 0.9rem;
+        padding: 0.75rem 1rem;
+    }
+}
+
+/* Tablet specific styles */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .sidebar {
+        width: 240px;
+    }
+
+    .sidebar .sidebar-brand {
+        font-size: 1.25rem;
+    }
+
+    .top-navbar .page-title {
+        font-size: 1.6rem;
+    }
+
+    .content-wrapper {
+        padding: 1.25rem;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 575.98px) {
+    .card-body {
+        padding: 0.75rem;
+    }
+
+    .table th,
+    .table td {
+        padding: 0.5rem 0.25rem;
+        font-size: 0.8rem;
+    }
+
+    /* Hide table columns on very small screens */
+    .table thead th:nth-child(4),
+    .table tbody td:nth-child(4) {
+        display: none; /* Hide Link column on mobile */
+    }
+
+    /* Spacing adjustments */
+    .content-wrapper {
+        padding: 0.5rem;
+    }
+
+    .page-title {
+        font-size: 1.25rem !important;
+    }
+
+    /* Form inputs full width on mobile */
+    .row .col-md-6 {
+        margin-bottom: 1rem;
+    }
+
+    /* Button full width on mobile */
+    .btn-action {
+        width: 100%;
+    }
+
+    /* Button group responsive */
+    .d-flex.justify-content-end {
+        flex-direction: column !important;
+        gap: 0.5rem;
+    }
+
+    .d-flex.justify-content-end .btn {
+        width: 100%;
+    }
+
+    /* Card padding on mobile */
+    .card-clean .card-header {
+        padding: 0.75rem 1rem;
+    }
+
+    /* Icon size adjustment on mobile */
+    .icon-cell-preview {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* Ensure sidebar closes when clicking outside on mobile */
+@media (max-width: 991.98px) {
+    .sidebar-collapse-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1035;
+    }
+}

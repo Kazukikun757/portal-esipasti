@@ -30,7 +30,7 @@
             <?= csrf_field() ?>
 
             <div class="row">
-                <div class="col-md-7">
+                <div class="col-lg-7">
                     <div class="mb-3">
                         <label for="name-input" class="form-label fw-medium">Nama Menu</label>
                         <input type="text" class="form-control" id="name-input" name="name" value="<?= esc(old('name', $menu['name'] ?? '')) ?>" required>
@@ -48,7 +48,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-5">
+                <div class="col-lg-5 mb-3 mb-lg-0">
                     <div class="mb-3">
                         <label for="icon-input" class="form-label fw-medium">Icon (SVG atau PNG)</label>
                         <input type="file" class="form-control" id="icon-input" name="icon" accept=".svg,.png">
@@ -69,8 +69,8 @@
 
             <hr class="my-4">
 
-            <div class="d-flex justify-content-end">
-                <a href="/admin/menu" class="btn btn-outline-secondary me-2">Batal</a>
+            <div class="d-flex flex-column flex-sm-row justify-content-end gap-2">
+                <a href="/admin/menu" class="btn btn-outline-secondary">Batal</a>
                 <button type="submit" class="btn btn-add">Simpan Perubahan</button>
             </div>
         </form>
