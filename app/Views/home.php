@@ -661,7 +661,6 @@
             <li><a href="#" class="nav-link">Home</a></li>
             <li><a href="#features" class="nav-link">Fitur</a></li>
             <li><a href="#about" class="nav-link">Tentang</a></li>
-            <li><a href="#faq" class="nav-link">FAQ</a></li>
             <li>
                 <?php if (!session()->has('user_id')): ?>
                 <a href="/login" class="nav-link">
