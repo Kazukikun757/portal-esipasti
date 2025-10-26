@@ -26,21 +26,26 @@ body {
 
 /* Mobile Menu Toggle Button */
 .btn-mobile-toggle {
-    position: fixed;
-    top: 1rem;
-    left: 1rem;
-    z-index: 1050;
     background: var(--primary-accent);
     color: white;
     border: none;
     border-radius: 8px;
-    padding: 0.75rem 1rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 0.5rem 0.75rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
 }
 
 .btn-mobile-toggle:hover {
     background: #7c3aed;
     color: white;
+}
+
+.btn-mobile-toggle i {
+    font-size: 1.1rem;
 }
 
 .sidebar-close {
@@ -104,6 +109,10 @@ body {
     font-size: 1.75rem;
     font-weight: 700;
     color: var(--text-color);
+    margin: 0;
+}
+
+.top-navbar .d-flex {
     margin: 0;
 }
 
@@ -311,7 +320,7 @@ body {
 
     /* Top navbar mobile spacing */
     .top-navbar {
-        padding: 1rem;
+        padding: 0.75rem 1rem;
         margin-left: 0;
         margin-right: 0;
         position: sticky;
@@ -321,6 +330,10 @@ body {
 
     .top-navbar .page-title {
         font-size: 1.5rem;
+    }
+
+    .top-navbar .d-flex.gap-3 {
+        gap: 0.75rem !important;
     }
 
     /* Content wrapper mobile spacing */
@@ -431,6 +444,16 @@ body {
 
     .page-title {
         font-size: 1.25rem !important;
+    }
+
+    .top-navbar .btn-mobile-toggle {
+        width: 36px;
+        height: 36px;
+        padding: 0.4rem 0.6rem;
+    }
+
+    .top-navbar .btn-mobile-toggle i {
+        font-size: 1rem;
     }
 
     /* Form inputs full width on mobile */

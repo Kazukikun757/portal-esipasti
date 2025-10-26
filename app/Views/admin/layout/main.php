@@ -16,11 +16,6 @@
 
 <body>
     <div class="container-fluid">
-        <!-- Mobile Menu Toggle Button -->
-        <button class="btn btn-mobile-toggle d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar" aria-expanded="false" aria-controls="sidebar">
-            <i class="fas fa-bars"></i>
-        </button>
-
         <div class="row">
             <div class="col-md-3 col-lg-2 d-md-block sidebar collapse" id="sidebar">
                 <div class="position-sticky px-3">
@@ -60,7 +55,13 @@
 
             <main class="col-md-9 ms-sm-auto col-lg-10">
                 <div class="top-navbar">
-                    <h1 class="page-title"><?= $title ?? 'Dashboard' ?></h1>
+                    <div class="d-flex align-items-center gap-3">
+                        <!-- Mobile Menu Toggle Button -->
+                        <button class="btn btn-mobile-toggle d-md-none" type="button">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                        <h1 class="page-title mb-0"><?= $title ?? 'Dashboard' ?></h1>
+                    </div>
                 </div>
 
                 <div class="content-wrapper">
