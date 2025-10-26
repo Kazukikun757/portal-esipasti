@@ -22,7 +22,7 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #1a0b2e 0%, #4c1d95 100%);
+            background: linear-gradient(135deg, #3d0145 0%, #bd21ff 100%);
             color: white;
             overflow-x: hidden;
         }
@@ -211,6 +211,7 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
+            justify-content: center;
             position: relative;
             padding: 6rem 2rem 2rem;
             overflow: hidden;
@@ -224,7 +225,7 @@
             height: 100%;
             opacity: 0.3;
             background: 
-                radial-gradient(circle at 20% 50%, rgb(184, 149, 255) 0%, transparent 50%),
+                radial-gradient(circle at 20% 50%, rgb(136, 76, 255) 0%, transparent 50%),
                 radial-gradient(circle at 80% 80%, rgb(255, 87, 171) 0%, transparent 50%);
             animation: float 20s ease-in-out infinite;
         }
@@ -238,7 +239,13 @@
             position: relative;
             z-index: 2;
             max-width: 1200px;
-            margin: 100px;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            justify-items: center;
         }
 
         .hero-badge {
@@ -257,6 +264,7 @@
             font-weight: 800;
             line-height: 1.2;
             margin-bottom: 1.5rem;
+            text-align: center;
         }
 
         .hero-title-highlight {
@@ -270,12 +278,16 @@
             color: rgba(255, 255, 255, 0.7);
             margin-bottom: 2rem;
             max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
         }
 
         .hero-buttons {
             display: flex;
             gap: 1rem;
             flex-wrap: wrap;
+            justify-content: center;
         }
 
         .btn-primary-glow {
@@ -324,7 +336,7 @@
 
         .floating-left {
             top: 20%;
-            left: 5%;
+            right: 5%;
             animation-delay: 0s;
         }
 
@@ -352,7 +364,7 @@
         }
 
         .section-title-highlight {
-            background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #aeaeae 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -454,6 +466,8 @@
 
             .hero-title {
                 font-size: 2.5rem;
+                align-items: center;
+                text-align: center;
             }
 
             .section-title {
@@ -752,9 +766,9 @@
                     <span>//</span> Tentang SiPasti
                 </div>
                 <h1 style="font-size: 3rem; font-weight: 800; margin-bottom: 2rem;">
-                    Sistem Informasi<span style="display: block; background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Pengawasan dan Tindak Lanjut</span>
+                    Sistem Informasi<span style="display: block; -webkit-background-clip: text;">Pengawasan dan Tindak Lanjut</span>
                 </h1>
-                <p style="font-size: 1.25rem; color: rgba(255, 255, 255, 0.7); max-width: 800px; margin: 0 auto; line-height: 1.8;">
+                <p style="font-size: 1.25rem; max-width: 800px; margin: 0 auto; line-height: 1.8;">
                     Merupakan Sistem Informasi yang menunjang kinerja pengawasan yang dilakukan oleh Para Auditor Inspektorat, serta merupakan sebuah sistem tindak lanjut bagi OPD yang menjadi sasaran pengawasan/pemeriksaan.
                 </p>
             </div>
