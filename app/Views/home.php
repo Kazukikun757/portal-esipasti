@@ -24,56 +24,7 @@
 
     <!-- Styles Include -->
     <link rel="stylesheet" href="../assets/css/main.css">
-    
-    <!-- Additional Mobile Responsive Styles -->
-    <style>
-        @media screen and (max-width: 991px) {
-            .menu-grid {
-                position: absolute;
-                top: 40%;
-            }
-        }
-        
-        @media screen and (max-width: 767px) {
-            .menu-grid {
-                position: absolute;
-                top: 35%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-            }
-            
-            .container {
-                padding-left: 15px !important;
-                padding-right: 15px !important;
-            }
-        }
-        
-        @media screen and (max-width: 575px) {
-            .menu-grid {
-                top: 30%;
-            }
-        }
-        
-        @media screen and (max-width: 450px) {
-            .menu-grid {
-                top: 25%;
-            }
-        }
-        
-        .menu-text {
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-            hyphens: auto;
-        }
-        
-        /* Ensure container doesn't overflow on mobile */
-        @media screen and (max-width: 767px) {
-            .wptb-heading .wptb-item--title {
-                word-wrap: break-word;
-                overflow-wrap: break-word;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="../assets/css/home-new.css">
 
 </head>
 
@@ -99,57 +50,7 @@
     <!-- End Main Header -->
 
     <!-- Mobile Responsive Menu -->
-    <div class="mr_menu" data-lenis-prevent>
-        <button type="button" class="mr_menu_close"><i class="bi bi-x-lg"></i></button>
-        <div class="logo"></div> <!-- Keep this div empty. Logo will come here by JavaScript -->
-
-        <h6>Menu</h6>
-        <div class="mr_navmenu"></div> <!-- Keep this div empty. Menu will come here by JavaScript -->
-
-        <h6>Contact Us</h6>
-        <div class="wptb-icon-box1 style2">
-            <div class="wptb-item--inner flex-start">
-                <div class="wptb-item--icon"><i class="bi bi-envelope"></i></div>
-                <div class="wptb-item--holder">
-                    <p class="wptb-item--description"><a href="mailto:bakarashshiddiq2@gmail.com">sipasti@gmail.com</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="wptb-icon-box1 style2">
-            <div class="wptb-item--inner flex-start">
-                <div class="wptb-item--icon"><i class="bi bi-geo-alt"></i></div>
-                <div class="wptb-item--holder">
-                    <p class="wptb-item--description"><a href="contact-1.html">28 Street, New York, USA</a></p>
-                </div>
-            </div>
-        </div>
-
-        <div class="wptb-icon-box1 style2">
-            <div class="wptb-item--inner flex-start">
-                <div class="wptb-item--icon"><i class="bi bi-envelope"></i></div>
-                <div class="wptb-item--holder">
-                    <p class="wptb-item--description"><a href="tel:+98765432122811">(+987) 654 321 228 11</a></p>
-                </div>
-            </div>
-        </div>
-
-        <h6>Find Our Page</h6>
-        <div class="social-box">
-            <ul>
-                <li><a href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a></li>
-                <li><a href="https://www.instagram.com/"><i class="bi bi-instagram"></i></a></li>
-                <li><a href="https://www.linkedin.com/"><i class="bi bi-linkedin"></i></a></li>
-                <li><a href="https://www.behance.com/"><i class="bi bi-behance"></i></a></li>
-                <li><a href="https://www.youtube.com/"><i class="bi bi-youtube"></i></a></li>
-            </ul>
-        </div>
-    </div>
-
     <div class="aside_info_wrapper" data-lenis-prevent>
-        <button class="aside_close">Close <i class="bi bi-x-lg"></i></button>
-
         <div class="aside_logo logo">
             <a href="index.html" class="light_logo"><img src="../assets/img/logo.png" alt="logo"></a>
             <a href="index.html" class="dark_logo"><img src="../assets/img/logo.png" alt="logo"></a>
@@ -201,90 +102,60 @@
         </div>
     </div>
 
-    <!-- Modal Search -->
-    <div class="search-modal">
-        <div class="modal fade" id="modalSearch">
-            <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content">
-                    <div class="search_overlay">
-                        <form class="credential-form" method="post">
-                            <div class="form-group">
-                                <input type="text" name="search" class="keyword form-control" placeholder="Search Here">
-                            </div>
-                            <button type="submit" class="btn-search">
-                                <span class="text-first"> <i class="bi bi-arrow-right"></i> </span>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Main Wrapper-->
     <main class="wrapper">
-        <!-- Slider Section -->
-        <section class="wptb-slider style1">
-            <div class="menu-wrapper d-flex justify-content-end me-5">
-                <div class="justify-content-center justify-content-xl-between">
-                    <div class="aside_open d-none d-xl-flex">
-                        <div class="aside-open--inner">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- Portal SIPASTI Main Section -->
+        <section class="portal-main-container page-wrapper">
             <div class="pattern-layer"></div>
-            <div class="swiper-container wptb-swiper-slider-one">
-                <!-- swiper slides -->
-                <div class="swiper-wrapper">
-                    <!-- Slide Item -->
-                    <div class="swiper-slide">
-                        <div class="wptb-slider--item">
-                            <!-- Layer Image -->
-
-                            <div class="wptb-slider--content">
-                                <div class="container">
-                                    <div class="menu-grid">
-                                        <?php if (isset($menus) && !empty($menus)): ?>
-                                            <?php foreach ($menus as $menu): ?>
-                                                <a href="<?= $menu['link'] ?>" class="menu-item">
-                                                    <div class="menu-icon"><img
-                                                            src="<?= $menu['icon'] ?>?v=<?= $cache_buster ?>"
-                                                            alt="<?= $menu['name'] ?>"></div>
-                                                    <div class="menu-text"><?= $menu['name'] ?></div>
-                                                </a>
-                                            <?php endforeach; ?>
-                                        <?php else: ?>
-                                            <!-- Fallback jika tidak ada menu -->
-                                            <a href="#" class="menu-item">
-                                                <div class="menu-icon"><img src="../assets/img/icons/default.svg" alt="">
-                                                </div>
-                                                <div class="menu-text">Menu Tidak Tersedia</div>
-                                            </a>
-                                        <?php endif; ?>
-                                    </div>
-                                    <div class="">
-                                        <div class="wptb-heading">
-                                            <div class="wptb-item--inner">
-                                                <h1 class="wptb-item--title">Portal <br> <span>Sipasti</span></h1>
-                                                <h1 class="wptb-item--title text-outline">Sipasti</h1>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+            <!-- Burger Menu Button -->
+            <div class="portal-burger-menu">
+                <div class="aside_open">
+                    <div class="burger-icon">
+                        <div class="burger-lines">
+                            <div class="burger-line"></div>
+                            <div class="burger-line"></div>
+                            <div class="burger-line"></div>
                         </div>
                     </div>
-                    <!-- End Slide Item -->
                 </div>
             </div>
-
-            <!-- Left Pane -->
-
+                        
+            <!-- Main Content -->
+            <div class="portal-content-wrapper">
+                <div class="portal-inner-container">
+                    <!-- Portal Header Title (Desktop) - Tambahkan ini -->
+                    <div class="portal-header-title d-none d-lg-block">
+                        <h1>Portal SIPASTI</h1>
+                    </div>
+                    <!-- Mobile Title -->
+                    <div class="portal-mobile-title d-block d-lg-none">
+                        <h1>Portal SIPASTI</h1>
+                    </div>
+                    
+                    <!-- Menu Grid -->
+                    <div class="portal-menu-grid">
+                        <?php if (isset($menus) && !empty($menus)): ?>
+                            <?php foreach ($menus as $menu): ?>
+                                <a href="<?= $menu['link'] ?>" class="portal-menu-item">
+                                    <div class="portal-menu-icon">
+                                        <img src="<?= $menu['icon'] ?>?v=<?= $cache_buster ?>" 
+                                             alt="<?= $menu['name'] ?>">
+                                    </div>
+                                    <div class="portal-menu-text"><?= $menu['name'] ?></div>
+                                </a>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <!-- Fallback jika tidak ada menu -->
+                            <a href="#" class="portal-menu-item">
+                                <div class="portal-menu-icon">
+                                    <img src="../assets/img/icons/default.svg" alt="Default Icon">
+                                </div>
+                                <div class="portal-menu-text">Menu Tidak Tersedia</div>
+                            </a>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="about-sipasti" class="container">
@@ -334,6 +205,121 @@
         <a href="#"><i class="bi bi-chevron-up"></i></a>
     </div>
 
+
+    <script>
+        // Portal SIPASTI - Fixed Aside Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM Loaded - Initializing menu...');
+            
+            // Get elements
+            const burgerMenu = document.querySelector('.portal-burger-menu');
+            const asideMenu = document.querySelector('.aside_info_wrapper');
+            const closeBtn = document.querySelector('.aside_close');
+            
+            // Create overlay if it doesn't exist
+            let overlay = document.querySelector('.aside-overlay');
+            if (!overlay) {
+                overlay = document.createElement('div');
+                overlay.className = 'aside-overlay';
+                document.body.appendChild(overlay);
+            }
+            
+            // Debug: Check if elements exist
+            console.log('Burger Menu:', burgerMenu);
+            console.log('Aside Menu:', asideMenu);
+            console.log('Close Button:', closeBtn);
+            console.log('Overlay:', overlay);
+            
+            // Toggle menu function
+            function toggleMenu() {
+                console.log('Toggle menu clicked');
+                
+                if (asideMenu && overlay && burgerMenu) {
+                    const isOpen = asideMenu.classList.contains('aside_info_open');
+                    
+                    if (isOpen) {
+                        // Close menu
+                        asideMenu.classList.remove('aside_info_open');
+                        overlay.classList.remove('active');
+                        burgerMenu.classList.remove('active');
+                        document.body.classList.remove('menu-open');
+                        console.log('Menu closed');
+                    } else {
+                        // Open menu
+                        asideMenu.classList.add('aside_info_open');
+                        overlay.classList.add('active');
+                        burgerMenu.classList.add('active');
+                        document.body.classList.add('menu-open');
+                        console.log('Menu opened');
+                        
+                        // Debug: Log classes and styles
+                        setTimeout(() => {
+                            console.log('Aside classes:', asideMenu.className);
+                            console.log('Aside right position:', window.getComputedStyle(asideMenu).right);
+                            console.log('Aside z-index:', window.getComputedStyle(asideMenu).zIndex);
+                            console.log('Aside display:', window.getComputedStyle(asideMenu).display);
+                        }, 100);
+                    }
+                } else {
+                    console.error('Missing elements:', {
+                        asideMenu: !!asideMenu,
+                        overlay: !!overlay,
+                        burgerMenu: !!burgerMenu
+                    });
+                }
+            }
+            
+            // Close menu function
+            function closeMenu() {
+                console.log('Close menu');
+                if (asideMenu && overlay && burgerMenu) {
+                    asideMenu.classList.remove('aside_info_open');
+                    overlay.classList.remove('active');
+                    burgerMenu.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                }
+            }
+            
+            // Event Listeners
+            if (burgerMenu) {
+                burgerMenu.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    toggleMenu();
+                });
+            }
+            
+            if (closeBtn) {
+                closeBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    closeMenu();
+                });
+            }
+            
+            if (overlay) {
+                overlay.addEventListener('click', function() {
+                    closeMenu();
+                });
+            }
+            
+            // Close on Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeMenu();
+                }
+            });
+            
+            // Prevent clicks inside aside from closing it
+            if (asideMenu) {
+                asideMenu.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                });
+            }
+            
+            console.log('Menu initialization complete');
+        });
+    </script>
 
     <script>
         document.addEventListener("mousemove", function(e) {

@@ -152,9 +152,46 @@
     
     /* Portal SIPASTI - Tablet adjustments */
     .menu-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 15px;
-        width: 90%;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        width: 100%;
+        max-width: 900px;
+        padding: 30px 20px;
+        margin: 0 auto;
+    }
+    
+    .menu-item {
+        padding: 25px 15px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        transition: all 0.3s ease;
+    }
+    
+    .menu-item:hover {
+        transform: translateY(-5px);
+        background: rgba(255, 255, 255, 0.2);
+    }
+    
+    .menu-icon {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+    
+    .menu-icon img {
+        width: 80px !important;
+        height: 80px !important;
+        object-fit: contain;
+    }
+    
+    .menu-text {
+        font-size: 15px !important;
+        font-weight: 600;
+        text-align: center;
+        line-height: 1.4em;
+        color: #333;
     }
     
     .wptb-about--text-one {
@@ -250,35 +287,62 @@
     /* Portal SIPASTI - Mobile adjustments */
     .menu-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-        width: 95%;
-        padding: 20px 10px;
+        gap: 20px;
+        width: 100%;
+        max-width: 500px;
+        padding: 20px 15px;
+        margin: 0 auto;
     }
     
     .menu-item {
-        padding: 8px 5px;
+        padding: 20px 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        transition: all 0.3s ease;
+    }
+    
+    .menu-item:active {
+        transform: scale(0.95);
+        background: rgba(255, 255, 255, 0.2);
+    }
+    
+    .menu-icon {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 15px;
     }
     
     .menu-icon img {
-        width: 40px;
-        height: 40px;
+        width: 70px !important;
+        height: 70px !important;
+        object-fit: contain;
     }
     
     .menu-text {
-        font-size: 12px;
+        font-size: 13px;
+        font-weight: 600;
+        text-align: center;
+        line-height: 1.4em;
+        color: #333;
     }
     
     .wptb-heading .wptb-item--title {
-        font-size: 36px;
-        line-height: 1.2em;
+        font-size: 28px;
+        line-height: 1.1em;
     }
     
     .wptb-heading .wptb-item--title.text-outline {
-        font-size: 32px;
+        font-size: 24px;
     }
     
     .wptb-about--text-one {
-        font-size: 16px !important;
+        font-size: 14px !important;
     }
     
     .wptb-text-marquee1 .wptb-item--text {
@@ -300,6 +364,17 @@
     
     .copyright {
         margin-bottom: 10px;
+    }
+    
+    /* Burger menu adjustments */
+    .menu-wrapper {
+        position: absolute !important;
+        z-index: 100 !important;
+    }
+    
+    .aside_open {
+        display: flex !important;
+        cursor: pointer;
     }
 }
 
@@ -406,26 +481,34 @@
     /* Portal SIPASTI - Small mobile adjustments */
     .menu-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
+        gap: 15px;
         width: 100%;
+        max-width: 450px;
+        padding: 15px 10px;
+    }
+    
+    .menu-item {
         padding: 15px 10px;
     }
     
     .menu-icon img {
-        width: 35px;
-        height: 35px;
+        width: 60px !important;
+        height: 60px !important;
+        margin-bottom: 12px;
     }
     
     .menu-text {
-        font-size: 11px;
+        font-size: 12px;
+        line-height: 1.3em;
     }
     
     .wptb-heading .wptb-item--title {
-        font-size: 28px;
+        font-size: 24px;
+        line-height: 1.1em;
     }
     
     .wptb-heading .wptb-item--title.text-outline {
-        font-size: 24px;
+        font-size: 20px;
     }
     
     .wptb-text-marquee1 .wptb-item--text {
@@ -434,7 +517,7 @@
     }
     
     .wptb-about--text-one {
-        font-size: 14px !important;
+        font-size: 13px !important;
     }
 }
 
@@ -460,16 +543,32 @@
     /* Portal SIPASTI - Extra small mobile */
     .menu-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-        padding: 10px 5px;
+        gap: 12px;
+        padding: 12px 8px;
+        max-width: 100%;
+    }
+    
+    .menu-item {
+        padding: 12px 8px;
     }
     
     .menu-icon img {
-        width: 30px;
-        height: 30px;
+        width: 55px !important;
+        height: 55px !important;
+        margin-bottom: 10px;
     }
     
     .menu-text {
-        font-size: 10px;
+        font-size: 11px;
+        line-height: 1.3em;
+    }
+    
+    .wptb-heading .wptb-item--title {
+        font-size: 22px !important;
+        line-height: 1.1em;
+    }
+    
+    .wptb-heading .wptb-item--title.text-outline {
+        font-size: 18px !important;
     }
 }
