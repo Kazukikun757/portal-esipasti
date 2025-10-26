@@ -1,377 +1,494 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="id">
 
 <head>
-    <!-- Meta Tags -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-    <meta name="description" content="Kimono - Photography Agency">
-    <meta name="author" content="">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal SIPASTI - Sistem Informasi Pengawasan dan Tindak Lanjut</title>
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <!-- Favicon and touch Icons -->
-    <link href="../assets/img/favicon.png" rel="shortcut icon" type="image/png">
-    <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-    <link href="../assets/img/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
-    <link href="../assets/img/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
-    <link href="../assets/img/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1a0b2e 0%, #4c1d95 100%);
+            color: white;
+            overflow-x: hidden;
+        }
 
-    <!-- Page Title -->
-    <title>Portal SIPASTI</title>
+        /* Header Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 11, 46, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+        }
 
-    <!-- Styles Include -->
-    <link rel="stylesheet" href="../assets/css/main.css">
-    <link rel="stylesheet" href="../assets/css/home-new.css">
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
 
+        .navbar-brand i {
+            font-size: 2rem;
+            background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #c084fc;
+        }
+
+        .btn-login {
+            background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+            color: white;
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-login:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 6rem 2rem 2rem;
+            overflow: hidden;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.3;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(139, 92, 236, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.3) 0%, transparent 50%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            margin-bottom: 2rem;
+            color: #c084fc;
+            font-weight: 500;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-title-highlight {
+            background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary-glow {
+            background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            border: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+        }
+
+        .btn-primary-glow:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.6);
+        }
+
+        .btn-outline-white {
+            background: transparent;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        .btn-outline-white:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: white;
+        }
+
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            border-radius: 20px;
+            padding: 2rem;
+            background: rgba(139, 92, 246, 0.1);
+            border: 2px solid rgba(139, 92, 246, 0.3);
+            backdrop-filter: blur(10px);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-left {
+            top: 20%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+
+        .floating-right {
+            top: 30%;
+            right: 5%;
+            animation-delay: 2s;
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 6rem 2rem;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .section-title-highlight {
+            background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: rgba(139, 92, 246, 0.1);
+            border: 2px solid rgba(139, 92, 246, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s;
+            backdrop-filter: blur(10px);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(139, 92, 246, 0.5);
+            box-shadow: 0 10px 40px rgba(139, 92, 246, 0.3);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-description {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .navbar {
+                padding: 1rem;
+            }
+
+            .hero-section {
+                padding: 5rem 1rem 2rem;
+            }
+
+            .floating-element {
+                display: none;
+            }
+        }
+    </style>
 </head>
 
-
-<body class="theme-style--light">
-
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="preloader-inner">
-            <div class="spinner">
-                <img src="../assets/img/logo.png" alt="img">
-            </div>
-            <h2 class="preloader-text">Portal SIPASTI</h2>
-        </div>
-    </div>
-
-    <!-- pointer start -->
-    <div class="pointer bnz-pointer" id="bnz-pointer"></div>
-
-
-
-    <!-- Main Header -->
-    <!-- End Main Header -->
-
-    <!-- Mobile Responsive Menu -->
-    <div class="aside_info_wrapper" data-lenis-prevent>
-        <div class="aside_logo logo">
-            <a href="index.html" class="light_logo"><img src="../assets/img/logo.png" alt="logo"></a>
-            <a href="index.html" class="dark_logo"><img src="../assets/img/logo.png" alt="logo"></a>
-        </div>
-
-        <div class="aside_info_inner">
-
-            <h6>MENU</h6>
-            <div class="insta-logo">
-                <i class="bi bi-instagram"></i> PORTAL SIPASTI
-            </div>
-            <div class="wptb-instagram--gallery">
-                <div class="wptb-item--inner d-flex align-items-center justify-content-center flex-wrap">
-                    <div class="wptb-item">
-                        <a href="/index.php/admin/menu" class="btn btn-admin-custom">
-                            ADMIN
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="wptb-icon-box1 style2">
-                <div class="wptb-item--inner flex-start">
-                    <div class="wptb-item--icon"><i class="bi bi-envelope"></i></div>
-                    <div class="wptb-item--holder">
-                        <p class="wptb-item--description"><a href="mailto:sipasti@gmail.com">sipasti@gmail.com</a></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="wptb-icon-box1 style2">
-                <div class="wptb-item--inner flex-start">
-                    <div class="wptb-item--icon"><i class="bi bi-geo-alt"></i></div>
-                    <div class="wptb-item--holder">
-                        <p class="wptb-item--description"><a href="contact-1.html">Jl. Tjilik Riwut KM. 1 No. 5</a></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="wptb-icon-box1 style2">
-                <div class="wptb-item--inner flex-start">
-                    <div class="wptb-item--icon"><i class="bi bi-envelope"></i></div>
-                    <div class="wptb-item--holder">
-                        <p class="wptb-item--description"><a href="tel:+98765432122811">(+987) 654 321 228 11</a></p>
-                    </div>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="d-flex justify-content-between align-items-center w-100">
+                <a class="navbar-brand" href="/">
+                    <i class="fas fa-file-alt"></i>
+                    SIPASTI
+                </a>
+                <div class="d-flex align-items-center gap-3">
+                    <a href="#" class="nav-link">Home</a>
+                    <a href="#features" class="nav-link">Fitur</a>
+                    <a href="#about" class="nav-link">Tentang</a>
+                    <a href="#faq" class="nav-link">FAQ</a>
+                    <?php if (!session()->has('user_id')): ?>
+                    <button class="btn btn-login" onclick="window.location.href='/login'">
+                        <i class="fas fa-lock"></i> Masuk
+                    </button>
+                    <?php else: ?>
+                    <button class="btn btn-login" onclick="window.location.href='/admin/menu'">
+                        <i class="fas fa-user"></i> Dashboard
+                    </button>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
-    </div>
+    </nav>
 
-    <!-- Main Wrapper-->
-    <main class="wrapper">
-        <!-- Portal SIPASTI Main Section -->
-        <section class="portal-main-container page-wrapper">
-            <div class="pattern-layer"></div>
-            <!-- Burger Menu Button -->
-            <div class="portal-burger-menu">
-                <div class="aside_open">
-                    <div class="burger-icon">
-                        <div class="burger-lines">
-                            <div class="burger-line"></div>
-                            <div class="burger-line"></div>
-                            <div class="burger-line"></div>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-background"></div>
+        
+        <!-- Floating Elements -->
+        <div class="floating-element floating-left d-none d-lg-block">
+            <div class="text-center">
+                <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📊</div>
+                <div style="font-weight: 700; font-size: 1.2rem;">Portal</div>
+                <div style="font-size: 0.9rem; color: rgba(255,255,255,0.7);">SIPASTI</div>
+            </div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-sparkles"></i> Portal Resmi SIPASTI
+            </div>
+            <h1 class="hero-title">
+                One-click for <span class="hero-title-highlight">Asset Defense</span>
+            </h1>
+            <p class="hero-description">
+                Dive into the art assets, where innovative blockchain technology meets financial expertise
+            </p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary-glow" onclick="window.location.href='/app'">
+                    Buka Aplikasi <i class="fas fa-arrow-right ms-2"></i>
+                </button>
+                <button class="btn btn-outline-white" onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'})">
+                    Pelajari Lebih Lanjut
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="section-title-highlight">Fitur Unggulan</span>
+                </h2>
+                <p class="section-subtitle">
+                    Solusi lengkap untuk pengawasan dan akuntabilitas
+                </p>
+            </div>
+
+            <div class="feature-grid">
+                <?php if (isset($menus) && !empty($menus)): ?>
+                    <?php foreach ($menus as $menu): ?>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <img src="<?= $menu['icon'] ?>" alt="<?= $menu['name'] ?>" style="width: 80px; height: 80px; object-fit: contain;">
+                            </div>
+                            <h3 class="feature-title"><?= $menu['name'] ?></h3>
+                            <p class="feature-description">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.
+                            </p>
                         </div>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <!-- Default Features -->
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-file-invoice"></i>
+                        </div>
+                        <h3 class="feature-title">Temuan & Tindaklanjut</h3>
+                        <p class="feature-description">
+                            Sistem pencatatan dan pengelolaan temuan audit serta tindak lanjutnya
+                        </p>
                     </div>
-                </div>
-            </div>
-                        
-            <!-- Main Content -->
-            <div class="portal-content-wrapper">
-                <div class="portal-inner-container">
-                    <!-- Portal Header Title (Desktop) - Tambahkan ini -->
-                    <div class="portal-header-title d-none d-lg-block">
-                        <h1>Portal SIPASTI</h1>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3 class="feature-title">e-Pengawasan</h3>
+                        <p class="feature-description">
+                            Platform pengawasan digital yang terintegrasi dan real-time
+                        </p>
                     </div>
-                    <!-- Mobile Title -->
-                    <div class="portal-mobile-title d-block d-lg-none">
-                        <h1>Portal SIPASTI</h1>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <h3 class="feature-title">e-Penugasan</h3>
+                        <p class="feature-description">
+                            Manajemen penugasan dan monitoring pelaksanaan tugas
+                        </p>
                     </div>
-                    
-                    <!-- Menu Grid -->
-                    <div class="portal-menu-grid">
-                        <?php if (isset($menus) && !empty($menus)): ?>
-                            <?php foreach ($menus as $menu): ?>
-                                <a href="<?= $menu['link'] ?>" class="portal-menu-item">
-                                    <div class="portal-menu-icon">
-                                        <img src="<?= $menu['icon'] ?>?v=<?= $cache_buster ?>" 
-                                             alt="<?= $menu['name'] ?>">
-                                    </div>
-                                    <div class="portal-menu-text"><?= $menu['name'] ?></div>
-                                </a>
-                            <?php endforeach; ?>
-                        <?php else: ?>
-                            <!-- Fallback jika tidak ada menu -->
-                            <a href="#" class="portal-menu-item">
-                                <div class="portal-menu-icon">
-                                    <img src="../assets/img/icons/default.svg" alt="Default Icon">
-                                </div>
-                                <div class="portal-menu-text">Menu Tidak Tersedia</div>
-                            </a>
-                        <?php endif; ?>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3 class="feature-title">Jaminan Mutu & Konsultasi</h3>
+                        <p class="feature-description">
+                            Layanan konsultasi dan jaminan mutu yang profesional
+                        </p>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="about-sipasti" class="container">
-            <div class="container">
-                <div class="wptb-heading">
-                    <div class="wptb-item--inner text-center">
-                        <h6 class="wptb-item--subtitle"><span>//</span> Tentang SiPasti</h6>
-                        <h1 class="wptb-item--title">Sistem Informasi<span> </br> Pengawasan dan Tindak Lanjut</span>
-                        </h1>
-                        <p class="wptb-about--text-one mb-4 w-100 w-lg-75 mx-auto fs-20">Merupakan Sistem Informasi yang menunjang kinerja
-                            pengawasan yang dilakukan oleh Para Auditor Inspektorat, serta merupakan sebuah sistem
-                            tindak lanjut bagi OPD yang menjadi sasaran pengawasan/pemeriksaan.</p>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="feature-title">Manajemen Tim</h3>
+                        <p class="feature-description">
+                            Koordinasi dan kolaborasi tim yang efektif
+                        </p>
                     </div>
-                </div>
-            </div>
-        </section>
-
-
-    </main>
-
-    <footer class="footer style1" style="background-color: #212121;">
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="footer-bottom-inner"
-                    style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-
-                    <div class="copyright">
-                        <p style="margin: 0;"><a href="https://themeforest.net/user/wpthemebooster">SIPASTI</a>
-                            Sistem Informasi Pengawasan dan Tindak Lanjut</p>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3 class="feature-title">Perpustakaan Digital</h3>
+                        <p class="feature-description">
+                            Akses dokumen dan referensi yang komprehensif
+                        </p>
                     </div>
-
-                    <div class="social-box style-oval">
-                        <ul>
-                            <li><a href="https://www.facebook.com/" class="bi bi-facebook"></a></li>
-                            <li><a href="https://www.instagram.com/" class="bi bi-instagram"></a></li>
-                            <li><a href="https://www.linkedin.com/" class="bi bi-linkedin"></a></li>
-                            <li><a href="https://www.behance.com/" class="bi bi-behance"></a></li>
-                        </ul>
-                    </div>
-
-                </div>
+                <?php endif; ?>
             </div>
         </div>
-    </footer>
+    </section>
 
-    <div class="totop">
-        <a href="#"><i class="bi bi-chevron-up"></i></a>
-    </div>
-
-
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
     <script>
-        // Portal SIPASTI - Fixed Aside Menu Toggle
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('DOM Loaded - Initializing menu...');
-            
-            // Get elements
-            const burgerMenu = document.querySelector('.portal-burger-menu');
-            const asideMenu = document.querySelector('.aside_info_wrapper');
-            const closeBtn = document.querySelector('.aside_close');
-            
-            // Create overlay if it doesn't exist
-            let overlay = document.querySelector('.aside-overlay');
-            if (!overlay) {
-                overlay = document.createElement('div');
-                overlay.className = 'aside-overlay';
-                document.body.appendChild(overlay);
-            }
-            
-            // Debug: Check if elements exist
-            console.log('Burger Menu:', burgerMenu);
-            console.log('Aside Menu:', asideMenu);
-            console.log('Close Button:', closeBtn);
-            console.log('Overlay:', overlay);
-            
-            // Toggle menu function
-            function toggleMenu() {
-                console.log('Toggle menu clicked');
-                
-                if (asideMenu && overlay && burgerMenu) {
-                    const isOpen = asideMenu.classList.contains('aside_info_open');
-                    
-                    if (isOpen) {
-                        // Close menu
-                        asideMenu.classList.remove('aside_info_open');
-                        overlay.classList.remove('active');
-                        burgerMenu.classList.remove('active');
-                        document.body.classList.remove('menu-open');
-                        console.log('Menu closed');
-                    } else {
-                        // Open menu
-                        asideMenu.classList.add('aside_info_open');
-                        overlay.classList.add('active');
-                        burgerMenu.classList.add('active');
-                        document.body.classList.add('menu-open');
-                        console.log('Menu opened');
-                        
-                        // Debug: Log classes and styles
-                        setTimeout(() => {
-                            console.log('Aside classes:', asideMenu.className);
-                            console.log('Aside right position:', window.getComputedStyle(asideMenu).right);
-                            console.log('Aside z-index:', window.getComputedStyle(asideMenu).zIndex);
-                            console.log('Aside display:', window.getComputedStyle(asideMenu).display);
-                        }, 100);
-                    }
-                } else {
-                    console.error('Missing elements:', {
-                        asideMenu: !!asideMenu,
-                        overlay: !!overlay,
-                        burgerMenu: !!burgerMenu
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
                     });
                 }
-            }
-            
-            // Close menu function
-            function closeMenu() {
-                console.log('Close menu');
-                if (asideMenu && overlay && burgerMenu) {
-                    asideMenu.classList.remove('aside_info_open');
-                    overlay.classList.remove('active');
-                    burgerMenu.classList.remove('active');
-                    document.body.classList.remove('menu-open');
-                }
-            }
-            
-            // Event Listeners
-            if (burgerMenu) {
-                burgerMenu.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    toggleMenu();
-                });
-            }
-            
-            if (closeBtn) {
-                closeBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    closeMenu();
-                });
-            }
-            
-            if (overlay) {
-                overlay.addEventListener('click', function() {
-                    closeMenu();
-                });
-            }
-            
-            // Close on Escape key
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') {
-                    closeMenu();
-                }
             });
-            
-            // Prevent clicks inside aside from closing it
-            if (asideMenu) {
-                asideMenu.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                });
+        });
+
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(26, 11, 46, 0.95)';
+            } else {
+                navbar.style.background = 'rgba(26, 11, 46, 0.8)';
             }
-            
-            console.log('Menu initialization complete');
         });
     </script>
-
-    <script>
-        document.addEventListener("mousemove", function(e) {
-            const pattern = document.querySelector(".pattern-layer");
-            const x = (e.clientX / window.innerWidth) * 30;
-            const y = (e.clientY / window.innerHeight) * 30;
-            pattern.style.backgroundPosition = `${x}px ${y}px`;
-        });
-    </script>
-
-
-    <!-- Core JS -->
-    <script src="../assets/js/jquery-3.6.0.min.js"></script>
-
-    <!-- Framework -->
-    <script src="../assets/js/bootstrap.min.js"></script>
-
-    <!-- WOW Scroll Effect -->
-    <script src="../plugins/wow/wow.min.js"></script>
-
-    <!-- Swiper Slider -->
-    <script src="../plugins/swiper/swiper-bundle.min.js"></script>
-    <script src="../plugins/swiper/swiper-gl.min.js"></script>
-
-    <!-- Odometer Counter -->
-    <script src="../plugins/odometer/appear.js"></script>
-    <script src="../plugins/odometer/odometer.js"></script>
-
-    <!-- Projects -->
-    <script src="../plugins/isotope/isotope.pkgd.min.js"></script>
-    <script src="../plugins/isotope/imagesloaded.pkgd.min.js"></script>
-
-    <script src="../plugins/isotope/tilt.jquery.js"></script>
-    <script src="../plugins/isotope/isotope-init.js"></script>
-
-    <!-- Fancybox -->
-    <script src="../plugins/fancybox/jquery.fancybox.min.js"></script>
-
-    <!-- Flatpickr -->
-    <script src="../plugins/flatpickr/flatpickr.min.js"></script>
-
-    <!-- Nice Select -->
-    <script src="../plugins/nice-select/jquery.nice-select.min.js"></script>
-
-
-
-    <!-- Cursor Effect -->
-    <script src="../plugins/cursor-effect/cursor-effect.js"></script>
-
-    <!-- Theme Custom JS -->
-    <script src="../assets/js/theme.js"></script>
-
 </body>
 
 </html>
